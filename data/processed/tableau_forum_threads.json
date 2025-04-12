@@ -1,0 +1,346 @@
+[
+    {
+        "title": "Calculate monthly commision amount based on criteria",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DXsXVCA1/calculate-monthly-commision-amount-based-on-criteria",
+        "author": "",
+        "date": "Edited April 10, 2025 at 6:14 PM",
+        "content": "Hi Team,I want to calculate commission amount starting from Jan'25 till Dec'25. I have data with loan_officer names with their monthly loan_counts. I want to calculate their commission amount based on a given criteria range.To calculate commission amount the criteria is : 1. if loan_counts<=50 then loan_count*$1502.if loan_counts>50 and loan_counts<=80 then loan_count*$2003 if loan_counts> 80 then loan_counts*$300Here loan_counts are calculating based on cummaltive-sum. E.g. Loan officer A monthly loan_counts are: Jan=20,Feb=25,Mar=20,Apr=20.if we calculate commission amount for Jan based on given criteria then Jan=20*$150 (Since loan-counts<=50 then multiply by $150)For Feb=25*$150 (Since total_loan_counts<=50 because till feb we have 20+25=45 which is <=50)Mar=20 units (total loan_counts= 20+25+20=65 till Mar which is >50 then , for Mar commission amount =5*$150+15*$200=750+3000=$3750Apr=20 units (total loan_counts= 20+25+20+20=85 till Apr which is >80 , for Apr commission amount = 15*200+5*300=$4500 (since out of 20 units,15 units falls under <=80 unit and remaining 5 units falls >80 so that's why 15*200+5*300)We required output with two fields only along with month filterAdded snapshot for output.E.g. for Apr month: A's commission amount : 15*200+5*300=4500﻿B's commission amount: 14*200+6*300=4600Added Working Tableau workbook.Thanks!",
+        "best_answer": "@Mohit Tyagi(Member)​ Because you calculation is using a table calculation function, you cannot use a dimension filter (seeThe Tableau Order of Operations - The Flerlage Twins: Analytics, Data Visualization, and Tableau)You can create a table calculation filter using the LOOKUP function with an offset of 0.//F_Lookup DateLOOKUP(ATTR(DATE(DATETRUNC('month',[Date-Close]))),0)Because the calculation is relying on the Month to determine the cumulative total, Month must be in the view so you can 'Compute using' it for the table calculation.When working within one year, either MONTH or MY will work.  When you start crossing years, you will need YEAR separate from MONTH."
+    },
+    {
+        "title": "Impersonation",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DoQ9uCAF/impersonation",
+        "author": "",
+        "date": "Edited 19h ago",
+        "content": "Hi All, I have a requirement where user wants to implement impersonation in tableau dashboards such as Person A can use Person B's user id and check the reports he as access to. Is there a way we can achieve the same in tableau? Looking for suggestions.Regards, Anubha",
+        "best_answer": null
+    },
+    {
+        "title": "Combining data that matches some fields",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DlpRqCAJ/combining-data-that-matches-some-fields",
+        "author": "",
+        "date": "Yesterday at 4:01 PM",
+        "content": "I'd like to create a join that where I have 2 joins but if only one is true that it still displays that dataI am trying to map out services based on country. But we are defining country as anything other that the 50 states. This creates a problem when separating out the US territories.I have attached a very small sample.I am trying to get it so BRA links to Brazil and the blank state does not exclude it. But USA with a state of GU would link to the Guam. USA with no State would link to USA.",
+        "best_answer": null
+    },
+    {
+        "title": "Unable to Trigger Offline Activation on Tableau Desktop 2025.1",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DWYnHCAX/unable-to-trigger-offline-activation-on-tableau-desktop-20251",
+        "author": "",
+        "date": "April 9, 2025 at 7:52 AM",
+        "content": "I'm trying to activate Tableau Desktop 2025.1 on an offline machine using a valid Creator key (TSXA-...). However, the software does not show the offline activation option, even after disconnecting all network interfaces, editing the hosts file, and setting a dummy proxy. Additionally, running tableau.exe -activate <key> via CLI has no effect—no error, no output, and no license file is generated. I also tested this with 2024.2, and the CLI command still fails silently. Is offline activation no longer supported via CLI for Tableau Desktop? How can I manually trigger the offline activation flow on newer versions?",
+        "best_answer": null
+    },
+    {
+        "title": "How to add overall all facility average line to the graph with 2 line parameters when a facility is selected from the filter.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DoirTCAR/how-to-add-overall-all-facility-average-line-to-the-graph-with-2-line-parameters-when-a-facility-is-selected-from-the-filter",
+        "author": "",
+        "date": "19h ago",
+        "content": "Help me add overall average antibiotic starts rate (all facilities average) by month to the graph above in a dotted line format in addition to the 2 parameters shown. When facility name is selected from the filter it should show facilities average antibiotic therapy starts rate by month, average antibiotic therapy starts by month, and a dotted overall all facilities average antibiotic therapy starts by month.",
+        "best_answer": null
+    },
+    {
+        "title": "The \"Length of Employment\" filter is not closing properly.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DnO0RCAV/the-length-of-employment-filter-is-not-closing-properly",
+        "author": "",
+        "date": "22h ago",
+        "content": "Good DayIn my second dashboard HR| Details,  I followed a youtuber to create filters and one (Length of Employment) is just not closing properly. I've tried everything to resolve this small issue.  Something strange is going on with the vertical container that is directly below the title \"Length of Employment\".If anyone can please help me, it would be appreciated.",
+        "best_answer": "Done! The filter was included in an additional vertical container that was causing the issue."
+    },
+    {
+        "title": "Date filter",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DagZoCAJ/date-filter",
+        "author": "",
+        "date": "April 9, 2025 at 9:21 PM",
+        "content": "Hi,I have a dashboard which has data for 4 years and I have a date filter as slider.Is it possible to restrict the date filter to show only 30 days as default when the report opens and if the users want they can drill further. Is it possible to default to 30 days in Tableau ?Thanks",
+        "best_answer": "Once you switch from a relative date filter to a slider, you'll need to manually adjust the slider to select the desired date range."
+    },
+    {
+        "title": "How to make multiple Year filter (NOT using a PARAMETER) to default to current year?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Dn7ngCAB/how-to-make-multiple-year-filter-not-using-a-parameter-to-default-to-current-year",
+        "author": "",
+        "date": "22h ago",
+        "content": "How to make multiple Years filter (NOT using a PARAMETER) to default to current year?I have a Hero Metric that must focus on a single [Year] value and have a table below that sum the total years. WITHOUT using a parameter how to create a dynamic [Year] filter to do below options. It's like using 1 year filter to do two different things,Goal:1. If a person chooses multiple years then only retrieve the SUM from the current year \"2025\"2.If the person pick ONE specific year (example 2023) then it should return the value for \"2023\"3.If there is no selection or set to ALL  the default the return the value based on current year [year(today())]",
+        "best_answer": null
+    },
+    {
+        "title": "Tableau Interaction Using Python",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DkspXCAR/tableau-interaction-using-python",
+        "author": "",
+        "date": "Yesterday at 11:28 AM",
+        "content": "Hi tableau fam,I have a Tableau workbook file containing 8 worksheets and 1 dashboard. Using Python's TableauDocumentapi module, I successfully retrieved the fields and data sources for each worksheet. Now, I want to retrieve the worksheets used in the dashboard and output them as a list.Will I be able to achieve that?I did a ton of research, and I got nothing. Can anyone help me with this?It would mean a lot!Thanks,Rahul Joseph Augustin",
+        "best_answer": null
+    },
+    {
+        "title": "Table has records in Data Source view, but is empty in Sheet view",
+        "link": "https://community.tableau.com/s/question/0D58b0000A6ewMrCQI/table-has-records-in-data-source-view-but-is-empty-in-sheet-view",
+        "author": "",
+        "date": "September 21, 2022 at 2:29 PM",
+        "content": "I have a data model that has four tables from a Snowflake connection. When I created it yesterday, all was working normally. Today, though, the sheet is empty. The data source has a root table with three other tables joined to it. The three other tables have data, but the root table appears to be empty.I've tried in Tableau Server and in Tableau Desktop. I've tried refreshing the extract. The table has data in Snowflake.In the Data Source tab, when I click 'Update Now' in the lower right part of the page, I see data.But, I can't even get a count of rows on a sheet.There are no filters on the sheet or the data source. There are no roles. I have full permissions (and can see records in the other tables).What could possibly be going on??",
+        "best_answer": null
+    },
+    {
+        "title": "How do I add units to labels in Tableau?",
+        "link": "https://community.tableau.com/s/question/0D54T00000C5y0kSAB/how-do-i-add-units-to-labels-in-tableau",
+        "author": "",
+        "date": "March 31, 2016 at 11:52 AM",
+        "content": "Hi,I'm relatively new to Tableau and I can't seem to figure out how to add units to the values in the labels. For example I would like to add \"cm\" to each label below. Could anyone get me pointed in the right direction?Thanks in advance",
+        "best_answer": "Hi RavinTo add text to a number, you'll need to first convert the number into a text field.Converting number to text has other implications, so i would suggest creating a second (new) field, so you can use the old and new field.(youcan'tsum (add up) a text field for example)STR(SUM([your field]))+'cm'Something like thatCheersMark"
+    },
+    {
+        "title": "I'm trying to reorder the legends of the items in the sheet & dashboard and I'm getting this error message: \"Unable to complete actionError in parameters for command 'reorder-legend-items'wrong type: 0 \"",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DmZzRCAV/im-trying-to-reorder-the-legends-of-the-items-in-the-sheet-dashboard-and-im-getting-this-error-message-unable-to-complete-actionerror-in-parameters-for-command-reorderlegenditemswrong-type-0-",
+        "author": "",
+        "date": "Edited yesterday at 8:06 PM",
+        "content": "It's happening on all workbooks on my computer (Macbook) and when colleagues open that same workbook on their computers, it works. So my laptop seems to be the problem. I've tried restarting tableau, as well as the computer. Still doesn't work. Has anyone had a similar issue? How did you solve it?I have the latest version downloaded, Apple silicon, 2025.1Many thanks",
+        "best_answer": null
+    },
+    {
+        "title": "Drill Down Chat AND using it as a filter",
+        "link": "https://community.tableau.com/s/question/0D5cw00000CzebkCAB/drill-down-chat-and-using-it-as-a-filter",
+        "author": "",
+        "date": "April 2, 2025 at 7:45 PM",
+        "content": "Hello all,I have a drill down bar chart showing Type and if you click on a specific Type in then shows you the Sub-Types under that selection. This uses some parameters and actions on the dashboard.The problem is, it is not acting as a filer (I have the use as filter selected) but I would like to use this visual as a filter for the rest of the dashboard. Am I missing something simple here?",
+        "best_answer": "Clicking on your bar changes the content of a calculated field from being the category to the sub-category. So, when you click on Furniture, and the chart switches to the subcategories, because you are still trying to filter on a value of \"Furniture\", there are no values, and so the filtering gets reset. It wouldn't really make sense to filter the other charts to Furniture and no longer be displaying furniture (in my opinion), so one way to fix your problem is to switch your drilldown action to be on Menu, rather than Select, then clicking on a category (or subcategory) will filter the other charts, but you'll have to click on a menu entry (in the tooltip) to switch the bottom bar chart between category and subcategory:"
+    },
+    {
+        "title": "Add new dates to an existing data set",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DVhb8CAD/add-new-dates-to-an-existing-data-set",
+        "author": "",
+        "date": "April 8, 2025 at 11:52 PM",
+        "content": "See the attached sample:each employee has existing Vest Share dates along with associated vest share quantityI created a date parameterI created a shares to be spent paramaterThe idea here is to allocate the new shares to each employee (they have a ratio that needs to be multiplied by the total shares to be spentThe BIG CHALLENGE:I need to set up the date parameter to whatever date I need including a date that is NOT currently in the vest date schedule.For example, if I select June of 2026 and I want to distribute 1,200 new shares (and assuming 3 year vesting), I would need to see for Joe:80 shares in June 202780 shares in June 202880 shares in June 2029For Mary:320 shares in JUne 2027320 shares in June 2028320 shares in June 2029I have tried to extend the date range on month(vest date) but any calculated fields I do remain blank as if the extension of date is fake data and tableau is ignoring any of my calculated fields.Thank youNick",
+        "best_answer": "I had some spare time, decided to try an tackle this...bit involved.1) Jim's absolutely correct that you'll need to scaffold in the missing date (months/years) as Tableau Desktop won't make that up for you.  Using the feature of displaying missing rows/columns sometimes works, but not in this case; and, keyword 'display'.  Tableau will display missing months but there's no values associated with it, and even if there were, they'd be displayed values as well, not real values to work with.2) I exported your data as .csv because I couldn't get to the data via the Data Source tab of your workbook.  That was then connected to using Tableau Prep.  Only one initial change to your data was to create a new field to normalize Vested Date to \"month\" using MAKEDATE() function:MAKEDATE(YEAR([VestDate]),MONTH([VestDate]),1)3) In MS-Excel, created a new single column of consecutive dates at the Month-Year level of detail.  All the way out to 12/1/2029:4) Connected to it in Tableau Prep, then joined it to your data using the following (note the join operator is <=) with an Inner Join:5) Then an Aggregation Step to reduce down the amount of rows that are created as a result of this join (selected only on Mary's data in this view):6) Then bring back in the Vested Dates via a Left-join on Vested Date and Month-Year date, Name, and ID:7) Then an Output Step as .hyper extract for use in Desktop.  The rest that follows is in Desktop in a new workbook.  The dates now rely on the new Month-Year date, not your Vested Date. A new calculation which is used as a 'bridge' calc.  It's referenced in the next calculation following.  Called it# of Additional Shares:{FIXED[Name]:SUM({FIXED[Name],[Month-Year]:(IF MONTH(MIN([Month-Year]))=MONTH([Dateto be distributed])AND YEAR(MIN([Month-Year]))>YEAR(MIN([Dateto be distributed]))THEN1END)})}8) Modified theAdditional Shares calcas:IF MONTH(MIN([Month-Year]))=MONTH([Dateto be distributed])AND YEAR(MIN([Month-Year]))>YEAR(MIN([Dateto be distributed]))THEN(SUM({FIXED[Name]:AVG([Sharesto spend])*AVG([Ratio])}))END/SUM([#ofAdditionalShares])9) Put it altogether and you'd have:So that, when a date is selected in the 'Date to be distributed' parameter, the results from the calc's above are assigned to the month'safter the current year selected in that parameter.Example workbook .twbx format attached.Best, Don Wise -Please don’t forget toupvote and/or Select as Bestby clicking the hyperlink belowin the response that answered your question."
+    },
+    {
+        "title": "Using a second marks layer on map for visual use only - while retaining map's filtering ability",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DghsICAR/using-a-second-marks-layer-on-map-for-visual-use-only-while-retaining-maps-filtering-ability",
+        "author": "",
+        "date": "April 10, 2025 at 6:56 PM",
+        "content": "In my Tableau workbook (download here:https://public.tableau.com/app/profile/digit.lab/viz/AADTMock/Dashboard1),I have a map in \"Dashboard 1\" which can be used to select road routes. When you click on a route, the graph below drills down to the \"Desc\" (individual route sections) to display stats along each section of the selected route. The charts are color coded by \"Desc\".I would like the map to also show the color-coded sections,  WITHOUT being used to filter. I can certainly add \"Desc\" as a color mark, but then I can't select the entire route at the same time to see multiple charts.I CAN add a second mark, which lies on top of the first mark, and make it un-selectable. But then the filter for the bar charts breaks, and I have no idea why.-Eric",
+        "best_answer": null
+    },
+    {
+        "title": "How to dynamically update B,M,K for various measure values",
+        "link": "https://community.tableau.com/s/question/0D54T00000cycNBSAY/how-to-dynamically-update-bmk-for-various-measure-values",
+        "author": "",
+        "date": "May 27, 2021 at 9:41 PM",
+        "content": "Hello all,So my requirement is that I have to dynamically update currency units .  But the table structure is such that I have to update those values for my measures under Measure Name. Now in real time scenario I cant pivot the data, so the structure remains the same.Also I was able to create the calculation for one of my measure (sales), but my other 2 measures (profit & discount) are taking the value from the sales currency calculation.How do i dynamically update currency units for my other measures.Formula Field in use: Currency Cal & Currency Cal (Copy)Attaching the twbx fileThanks in advance,Priyanka",
+        "best_answer": null
+    },
+    {
+        "title": "Please help me with this error. I just updated my Tableau Desktop to the latest version (2025.1.0), and now I get this error when trying to open some workbooks.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DBsyWCAT/please-help-me-with-this-error-i-just-updated-my-tableau-desktop-to-the-latest-version-202510-and-now-i-get-this-error-when-trying-to-open-some-workbooks",
+        "author": "",
+        "date": "Edited April 4, 2025 at 6:23 PM",
+        "content": "Unable to complete actionThe connection to the data source might have been lost.Error Code: 6D75755AQuery category '43' is not supported by the Viz Data APIclass TableauException",
+        "best_answer": null
+    },
+    {
+        "title": "How to create a chart with multiple visual?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DVyn0CAD/how-to-create-a-chart-with-multiple-visual",
+        "author": "",
+        "date": "April 9, 2025 at 2:31 AM",
+        "content": "Hi All,I have a question, which I trying to replicate this chart from Excel to Tableau.I trying to combine Line, Area and Bar chart, but currently I am only able to combine Line and Area, and I cannot add 1 more bar inside the chart (in Tableau).Is there any way to change the delta into bar chart in tableau?Excel and tableau workbook attached.Thank you.This is the example of chart in Excel.This is what I tried to create in Tableau:",
+        "best_answer": null
+    },
+    {
+        "title": "Ifnull + Color with Discrete Dimension",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DYXqCCAX/ifnull-color-with-discrete-dimension",
+        "author": "",
+        "date": "Edited April 9, 2025 at 3:36 PM",
+        "content": "Hello,1) Is there any way that we can change the Null to N/A. I tried this formula, but not working2) I'm wondering if it's possible to color discrete dimensionpositive % chg: greennegative % chg: rednull: whitethank you",
+        "best_answer": null
+    },
+    {
+        "title": "Grouping by condition and remove Dimension",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DjBCsCAN/grouping-by-condition-and-remove-dimension",
+        "author": "",
+        "date": "Edited yesterday at 5:34 PM",
+        "content": "Hi,Could you provide a solution to display the output shown below?Additionally, could you suggest a way to create the donut chart using calculated fields, rather than relying on Level of Detail (LOD) expressions and table calculations?Output:Display below output Donut and table.Action Filter: When you click on Condition 1 (which is a measure), Output 1 sheet will be displayed. Similarly, when you click on Condition 2 (a measure based on another condition), Output 2 sheet will be shown, and so forth.Thanks in advance!!",
+        "best_answer": null
+    },
+    {
+        "title": "Does anyone know how to create a map using average salaries along sided population densities.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DgTlQCAV/does-anyone-know-how-to-create-a-map-using-average-salaries-along-sided-population-densities",
+        "author": "",
+        "date": "April 10, 2025 at 7:24 PM",
+        "content": "Hello, I would like assistance creating a heat map using average salaries across the US (data has been collected already... as well as have population density circles that grow in size for supply of talent within the US (data has been collected)",
+        "best_answer": "Is this what you want?It feels a little misleading, in that the circle sizes seem largely proportional to the population of the state (hypothesising that 'supply' is a function of population, and only really having any idea that California and Texas are quite populous), it might be worth considering the supply per capita, or the ratio of supply to demand.If this approached what you want, then it's just two map layers - drag the State field onto the worksheet twice - the first you drag salary to the colour button, the second you change the mark type to shape and drag supply to the size button."
+    },
+    {
+        "title": "Create an X-Y plot showing all combinations of two variables, based on a third variable",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DfwMJCAZ/create-an-xy-plot-showing-all-combinations-of-two-variables-based-on-a-third-variable",
+        "author": "",
+        "date": "April 10, 2025 at 7:26 PM",
+        "content": "I have three columns of data. The first column contains ids that identify the item being tested. The second column contains test results for some (but not all) of the item ids as measured on machine 1. The third contains column test results for some (but not all) of the item ids on machine 2. So each row is a test of a specific item ID on machine 1, or machine 2, or both. Further, the same item ID may be represented on multiple rows of the table.The table looks something like this:ID     Machine 1 result   Machine 2 result1       101                              851       1041                                            831        95                               872        852        83                               772                                            792        85...What I want to do is to create an XY plot that shows Machine 1 on the X axis and Machine 2 on the y axis, and which has a dot for every combination of X and Y that has the same ID. Like this:101,85101,83101,87104,85104,83104,8795,8595,8395,87and so on for the combinations of item 2...I am fine with having a single plot that shows all of these combinations.Is there a way to do this in Tableau Desktop? How?",
+        "best_answer": null
+    },
+    {
+        "title": "Avoiding overlapping labels in dual axis chart",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DXXFOCA5/avoiding-overlapping-labels-in-dual-axis-chart",
+        "author": "",
+        "date": "April 9, 2025 at 2:44 PM",
+        "content": "In a dual-axis chart, how can I avoid overlapping labels after adding an average line?Thanks",
+        "best_answer": null
+    },
+    {
+        "title": "Donut chart - question",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Dfj2yCAB/donut-chart-question",
+        "author": "",
+        "date": "April 10, 2025 at 6:11 PM",
+        "content": "Hello!I wanted to see if I could get some help on this donut chart. I have attached a sample workbook (I understand that the way the data is compiled is not ideal, but we have some limitations so this is the best way I could create what was needed).I was able to get an average for 24-25 into the middle of the donut chart, but now need to do the same for 23-24, does anyone have an idea of the best way to do this? I was thinking LOD but I can't seem to get there.Thank you and also I apologize in advance for the messy workbook!",
+        "best_answer": null
+    },
+    {
+        "title": "I have created a dashboard with a one use filter is weeknoas per todays date current weekno is 14so i have filter option from week1 to week 14so what i am looking for is that user filter has to pick the current weekno as a default",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DjTBWCA3/i-have-created-a-dashboard-with-a-one-use-filter-is-weeknoas-per-todays-date-current-weekno-is-14so-i-have-filter-option-from-week1-to-week-14so-what-i-am-looking-for-is-that-user-filter-has-to-pick-the-current-weekno-as-a-default",
+        "author": "",
+        "date": "Yesterday at 5:31 AM",
+        "content": "I have created a dashboard with a one use filter is weeknoas per todays date current weekno is 14so i have filter option from week1 to week 14So today the filter has to automatically select the weekno14so what i am looking for is that user filter has to pick the current weekno as a default as soon as they open  the dashboard (that means the current week no should be checked )and previous weekno should be unchecked and should be available the users to select if they wants.As per today the weekno is 14 so it has to be selected and weekno1 to week13 should be available in the quick filterif i user opening next the filter should be adjusted and checked weekno15 and others should be available",
+        "best_answer": null
+    },
+    {
+        "title": "How to combine 2 dates fields from different files to show the values based on month",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DkX6YCAV/how-to-combine-2-dates-fields-from-different-files-to-show-the-values-based-on-month",
+        "author": "",
+        "date": "Yesterday at 10:15 AM",
+        "content": "Hi Everyone,I have 2 files and used relationship based on region and now i want to show total record numbers based on month and region.When i try i am not getting accurate results, please see the details below, second column showing in correct detailsHow do i get correct count in second table, in both the files i used we have different set of record numbers i want to show count of those records based on region and monthPlease suggest me on this issue and thanks in advance",
+        "best_answer": null
+    },
+    {
+        "title": "Filter dashboards independently using the same worksheets?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DfhRLCAZ/filter-dashboards-independently-using-the-same-worksheets",
+        "author": "",
+        "date": "Edited April 10, 2025 at 4:39 PM",
+        "content": "Hello,I am struggling and I need some help.I have 2 data sources that I have blended across 4 different worksheets. I want to build 10 dashboards with independent \"Fruit\" filters without having to duplicate all my worksheets 10 times over. Dashboard 1 should be filtered for Fruit: Banana, Dashboard 2 should be Filtered by Fruit: Apple, Dashboard 3 by Fruit: Kiwi and so forth. I would like to achieve this WITHOUT having to duplicate all worksheets 10 times over, as it would require 40 worksheets and 10 dashboards.The end goal is a daily subscription email that goes out to stakeholders, that contains 10 one pager dashboards in a PDF - one for each fruit. All with the same charts from the same worksheets, just showing a different fruit on each dashboard.Is there a way of achieving this without having to create independent worksheets for each dashboard and rebuild the same dashboard 10 times over?Like basically a \"Dashboard filter\" that works independently, without changing the worksheet. As I need to sometimes change which fruit are shown in my subscription sendout, it would be very handy if I could just open the dashboard and replace e.g. Fruit: Kiwi with Fruit: Pear and republish it.I tried using a parameter but the Parameter filters all the dashboards when I change the fruit in one of the dashboards..",
+        "best_answer": null
+    },
+    {
+        "title": "Need help with running totals with a condition",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DinSWCAZ/need-help-with-running-totals-with-a-condition",
+        "author": "",
+        "date": "Yesterday at 2:40 AM",
+        "content": "i have a data table something like below. I have to  do a running total on sales column. The condition is highlight the rows where the running total less than 500 and you see in the table below. I am able to do this part.But I also want to show the total of the rows that satisfied the running total condition. meaning, i want the total of the 4 highlighted rows. as shown below.  i,e I want to see 460 at the bottom.I showed running total column for explanation, but i don;t plan to show it in the tablePlease give me some advise",
+        "best_answer": null
+    },
+    {
+        "title": "How do I convert a rank table calculation into a LOD expression?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Dh0uhCAB/how-do-i-convert-a-rank-table-calculation-into-a-lod-expression",
+        "author": "",
+        "date": "April 10, 2025 at 8:25 PM",
+        "content": "I have a worksheet with a table of employees that are being ranked based on a certain metric. I am using a table calculation to rank the employees.In the dashboard, I have a filter that allows the user to filter on an employee, and the selected employee's metrics and ranking will be shown. I am unable to show the correct ranking because it uses a table calculation logic, and I believe all the employees need to be in the view for the ranking table calculation to work.How do I convert a rank table calc into a rank LOD expression, as I believe for an LOD expression to work not all the fields have to be in the view?",
+        "best_answer": null
+    },
+    {
+        "title": "How do I include a space in a column chart of Likert scale data for scores that were never chosen?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DeMkgCAF/how-do-i-include-a-space-in-a-column-chart-of-likert-scale-data-for-scores-that-were-never-chosen",
+        "author": "",
+        "date": "April 10, 2025 at 2:34 PM",
+        "content": "Basically I have a few Likert scale survey questions that I want to analyze, but when I throw them into a bar chart sometimes there is a number missing because the survey respondents never chose that option. How do I leave a space for that value in my chart?",
+        "best_answer": "If you're looking to create a score (and related question dimension) that doesn't currently exist in the dataset, then you'll need to bring that in separately by scaffolding in related data.  The below usesnot Tableau Desktop but Tableau Prep to clean/reshape the data:1) Create a MS-Excel worksheet of just the question(s) and the range of possible scores:2) Pivot the questions in Tableau Prep so that it's tall not wide, then join the result on Question and on Score (from your data) to Answer Scale (score),  The initial result would then reveal that Current Satisfaction and Price Importance are unmatched to the Answer Scale:But that doesn't create thenullcondition that you need which would then create two new rows (1) Current Satisfaction (2) Price Importance.  By changing the join from inner to a Right Join, you'll then see the two new rows created with the other column values being NULL:From there a bit of clean up to remove non-needed columns, and the Output Step is added (can be an output of .csv or .xlsx or .hyper (extract) or written to another DB) which is then used in Desktop.  The output results look like:3) Then take the Output of that (I used a .hyper extract) into Desktop:The Tableau Prep flow (packaged) is attached to help point the way.  If you don't have Prep, it is a free download which uses the same licensing as Desktop (comes with your subscription).Best, Don Wise -Please don’t forget toupvote and/or Select as Bestby clicking the hyperlink belowin the response that answered your question."
+    },
+    {
+        "title": "Need suggestion for joint or Union or any other way on this issue",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DdLpwCAF/need-suggestion-for-joint-or-union-or-any-other-way-on-this-issue",
+        "author": "",
+        "date": "April 10, 2025 at 8:48 AM",
+        "content": "I have 2 different files and both files have common fields Region and Record number and both the files having different set of record numbers, i have dragged region from file and added count of record numbers and details are matching but when i try to add record count from second file i am getting count of record numbers under Null, please refer the image belowi want to show count of record numbers based on region and i have used relationship to connect both the files based on region.Please do suggest how do i resolve this.Thanks in advance",
+        "best_answer": "Have you created a relationship using more than just the region field? Yo mention the \"Record Number\" in your question, if you've used that then there would also need to be a record on both sides of the relationship that matched both the region and that number. It seems to me like you only want the relationship to be on the region. If you have only got the region field, then I'd check your underlying data for any additional accidental characters, your left hand column looks like it could have a space before the region name (notice it's slightly indented)."
+    },
+    {
+        "title": "Is there any way to retrieve the list of Suspended subscriptions from the Postgres?. Any help in the issue is much appreciated.",
+        "link": "https://community.tableau.com/s/question/0D58b0000B6V1ihCQC/is-there-any-way-to-retrieve-the-list-of-suspended-subscriptions-from-the-postgres-any-help-in-the-issue-is-much-appreciated",
+        "author": "",
+        "date": "May 31, 2023 at 11:18 AM",
+        "content": "",
+        "best_answer": "Hi@Vijay Bala(Member)​Sorry, looks like I did read it to fast.As Matt Coles correctly states in the upper link, the only way would be to go down the REST API road.I have built a monitoring script to spot extracts that had a failure in the first run (consequtive fails number = 0) to retrigger the extract refresh. It is the method get extract refresh tasks.https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_jobs_tasks_and_schedules.htm#get_extract_refresh_tasksYou query all extract refresh tasks that have a number of consecutiveFailedCount equal to 0.https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_jobs_tasks_and_schedules.htm#run_extract_refresh_taskThen you store the LUID of those and iterate through that list to trigger the rerun.Plus, I used the repository data sources (second link) to build an alert system for the extract refreshes that failed at least twice (consequtive fails number >= 1) and managed to get the failure note. Plus I also built a helper tool having collected some of the errors and pointing to the knowledge base articles.Unfortunately I did this for a client and have no access to the system as I don't work for the customer at the time being.It's a little bit of work, especially the refresh-triggering script. But it is worth it to monitor extract refreshes. Also you can note whoever you want not just the owner. The customer still loves me for having built this.Best regards,Matthias"
+    },
+    {
+        "title": "LOD calc issue",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DiaERCAZ/lod-calc-issue",
+        "author": "",
+        "date": "Yesterday at 2:00 AM",
+        "content": "Hello,i'm trying to divide 142,352 / 457,688 using LOD, but I got incorrect resultthe result should be 31% instead of 19%. how to fix this? thank you",
+        "best_answer": "@Javier Sutanto(Member)​Hi, you may use:(SUM({FIXED[State/Province],[Category]:SUM([Sales])})/SUM({FIXED[State/Province]:SUM([Sales])}))*100If this post resolves the question, would you be so kind to \"Select as Best\"?. This will help other users find the same answer/resolution and help community keep track of answered questions. Thank you.Regards,Diego MartinezTableau Visionary and Forums Ambassador"
+    },
+    {
+        "title": "How to stop mark labels from disappearing after each point in an animated line graph?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000CoYZWCA3/how-to-stop-mark-labels-from-disappearing-after-each-point-in-an-animated-line-graph",
+        "author": "",
+        "date": "April 1, 2025 at 3:52 AM",
+        "content": "Hi,I'm trying to figure out how to keep the history of my mark labels when I animate a line graph. The best I can do when clicking \"show history\" is by having the label appear once when it \"iterates\" and then it disappears once it gets to the next point. I want the mark labels to stay throughout the animation, so you can see the value of each point over time. I don't want the viewer to have to rely on a y-axis, so I usually keep mark labels for every point on a line graph and delete the y-axis bar when I make line graphs, but I can't do it for animated line graphs.I've only found one post related to this question from a few years ago, but the answer was really vague, talking about having to convert the data into a PivotChart, which seemed like a lot of work for something so seemingly simple. Help is greatly appreciated. Thank you!",
+        "best_answer": null
+    },
+    {
+        "title": "How to Conditionally Format Values +/- 10% or over in Red?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Da7FyCAJ/how-to-conditionally-format-values-10-or-over-in-red",
+        "author": "",
+        "date": "April 9, 2025 at 9:10 PM",
+        "content": "The last column for % Error....I want to conditionally format any values that are +/- 10% or more in Red. How do I do that?",
+        "best_answer": "See if this helps."
+    },
+    {
+        "title": "Subtotals and Percentages using Cycle File/Data Scaffold?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DXU9oCAH/subtotals-and-percentages-using-cycle-filedata-scaffold",
+        "author": "",
+        "date": "April 9, 2025 at 12:51 PM",
+        "content": "I'm using a new technique from@Michael Hesser(Member)​ with Cycle File/Data Scaffold and wanted to do a subtotal for the Counts column for the Analysis Notes. Example: The False- category has a subtotal of 5 Counts and the Sacralt has a subtotal of 7.In addition, I am trying to do another column which will show a percentage of the SpikeMixSplit category.Count(SpikeMix Split)/Total(Count(SpikeMix Split) but I'm getting an error that level of detail expressions cannot contain table calculations.Anyone have ideas?",
+        "best_answer": "That's right, you can't step outside the Level of Detail of an LoD, to get values that are based on your displayed table. Is this what you're looking for, I'm not quite sure I follow your requirement:"
+    },
+    {
+        "title": "Is Tableau interesting for our company?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DdsHLCAZ/is-tableau-interesting-for-our-company",
+        "author": "",
+        "date": "April 10, 2025 at 11:54 AM",
+        "content": "Dear people,We (a graphic design and communication company) are currently exploring Tableau as a new tool for creating figures. These are not complex figures—mostly bar charts and pie charts. Now we make these figures only in Adobe Illustrator but those take a lot of time to make.Over the coming weeks, I will be diving into all the possibilities within Tableau. If we like what we see, we plan to roll it out on a larger scale within our team.During my research, I’ve already come across a few questions I’d like to get answers to:A few key points are important for us:The data and visuals should only be accessible to us and our clients (the data is often confidential and not meant to be public). Is this possible?The figures need to follow specific formats, colors, fonts, and font sizes. Is this possible?Can figures be easily exported to SVG (or a similar format) directly to the desktop?Our font was custom-made for our client and is not in the font catalog—can we add it?Can we set the workspace to CMYK or RGB and import our  color codes?I hope someone can answer these questions! :)",
+        "best_answer": null
+    },
+    {
+        "title": "Rounding Up or Down in Tableau",
+        "link": "https://community.tableau.com/s/question/0D54T00000C6dRcSAJ/rounding-up-or-down-in-tableau",
+        "author": "",
+        "date": "July 10, 2019 at 8:46 AM",
+        "content": "Hi, I'm using Tableau's custom number format option to scale by a thousand in such a way that 1200000 ends up as \"1 200\":The problem I'm facing is that when there is a number such as 1400706, it always rounds down instead of to the nearest thousand. So I end up getting \"1 400\" instead of 1 401\", which would be more accurate.Is there any way to force it to the nearest thousand using the custom format option?I figured there's no point in attaching a workbook as you literally just need any large, random number.Thanks!",
+        "best_answer": "That's actually the problem I was having, as Idon'twant it to do that type of rounding. However, it turns out it was rounding perfectly fine (to the nearest 1,000 as desired). Once we looked deeper into the numbers, we realized that we had the following issue:Scaled values: 15, 7 and a total of 21 (so we assumed it was rounding down)Original values: 14 563, 6 854 and 21 417So actually it was rounding correctly, it's just that totaled, it was closer to 21 then 22, because the rounding was only applied once summed. Which is obviously logical, we just missed that on our end. So problem solved!"
+    },
+    {
+        "title": "Sankey chart for Q1 vs Q2",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Dd38cCAB/sankey-chart-for-q1-vs-q2",
+        "author": "",
+        "date": "April 10, 2025 at 11:28 AM",
+        "content": "I am struggling to write calculations for Dimension 1 (Q1  CLV) and Dimension 2(Q2 CLV).This is how my data looks like.",
+        "best_answer": null
+    },
+    {
+        "title": "Displaying overlay line graph for custom paramter-based period + same period -1 month.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DXMKGCA5/displaying-overlay-line-graph-for-custom-paramterbased-period-same-period-1-month",
+        "author": "",
+        "date": "April 9, 2025 at 12:19 PM",
+        "content": "Hi all,I'm trying to create a line graph showing Day on Day data for a custom selected period (based on Start and End date params) + another line graph overlay showing data for the same period shifted -1 month.The closest functioning solution I found is this (-1 year in this example but function is the same):https://www.youtube.com/watch?v=86mnN3d021EHowever, these labels don't work for data periods exceeding 1 month, as labels exclude any overlaps (ex. custom period 01/03/25 - 14/04/25 will only label the previous period as 01/02/25 - 28/02/25 instead of 01/02/25 - 14/03/25).I've been researching this for some time and still haven't found a solution which would enable comparison with overlapping dates.Any help would be appreciated, thanks!",
+        "best_answer": null
+    },
+    {
+        "title": "Tableau Desktop Certification Exam Preparation",
+        "link": "https://community.tableau.com/s/question/0D54T00000MmJrsSAF/tableau-desktop-certification-exam-preparation",
+        "author": "",
+        "date": "November 3, 2020 at 7:54 PM",
+        "content": "Hi,I just finished all 6 units  of Tableau Desktop Specialist Exam Readiness course. In terms of  Tableau Desktop Specialist certification exam, will the practice questions for exam, practice review sessions and video review for each unit be enough for this exam?I wanted to confirm this before I schedule the exam.Thanks,Michelle",
+        "best_answer": null
+    },
+    {
+        "title": "Refresh Extract of multiple connection source containing a static geospatial file in Tableau Online",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DdUogCAF/refresh-extract-of-multiple-connection-source-containing-a-static-geospatial-file-in-tableau-online",
+        "author": "",
+        "date": "April 10, 2025 at 12:03 PM",
+        "content": "Hi everyone,I have created an extract in Tableau Desktop, that takes data from two different sources, from a connection to mysql server and from a \"static\" geospatial file (saved locally). I upload the workbook to tableau online and everything seems to be perfect. However, the problems occurs when it comes to refreshing the extract. The extract is not refreshed, even though there is no error alert returned by tableau online when I try to refresh it manually. The connection to mysql server is functional, because I tested it when I uploaded the workbook. I assume there is a problem with a geospatial file. However, the geospatial file is included as an external file when I upload the workbook and there is no need to be updated. What do you think? Is there a workaround on this?",
+        "best_answer": null
+    },
+    {
+        "title": "How to sort column values in sheet",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DcYqwCAF/how-to-sort-column-values-in-sheet",
+        "author": "",
+        "date": "April 10, 2025 at 5:43 AM",
+        "content": "I've a sheet with 4 columns from primary source and 1 column from secondary source of blended relations, I'm not able sort the last column because it is coming from another source which is secondary source in blended relation, how can I sort this column from secondary source ??",
+        "best_answer": null
+    }
+]
