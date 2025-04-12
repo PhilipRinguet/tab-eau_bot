@@ -56,6 +56,13 @@ create_environment:
 	
 
 
+## Commit and push changes
+.PHONY: commit
+commit:
+	git add .
+	git commit -m "$(m)"
+	git push origin main
+
 
 #################################################################################
 # PROJECT RULES                                                                 #

@@ -1,4 +1,6 @@
 black
+beautifulsoup4
+requests
 flake8
 ipython
 isort
@@ -14,3 +16,5 @@ python-dotenv
 scikit-learn
 tqdm
 typer
+selenium
+webdriver-manager
