@@ -215,5 +215,4 @@ Thumbs.db
 /data/
 
 # Specifically exclude large PDF files
-!data/processed/
-!data/processed/tableau_forum_threads.json
+!data/raw/
