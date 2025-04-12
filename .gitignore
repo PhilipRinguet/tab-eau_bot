@@ -211,8 +211,5 @@ Thumbs.db
 *.dylib
 *.pyd
 
-# Re-include the data folder in .gitignore to exclude large files
-/data/
-
 # Specifically exclude large PDF files
-!data/raw/
+data/raw/
