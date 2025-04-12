@@ -210,3 +210,10 @@ Thumbs.db
 *.dll
 *.dylib
 *.pyd
+
+# Re-include the data folder in .gitignore to exclude large files
+/data/
+
+# Specifically exclude large PDF files
+!data/processed/
+!data/processed/tableau_forum_threads.json
