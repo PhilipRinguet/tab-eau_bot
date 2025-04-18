@@ -1,1 +1,2 @@
-from tableau_bot import config  # noqa: F401
+# Updated import to use relative path
+from . import config  # noqa: F401

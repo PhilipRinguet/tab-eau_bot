@@ -18,3 +18,5 @@ tqdm
 typer
 selenium
 webdriver-manager
+PyPDF2
+PyMuPDF
