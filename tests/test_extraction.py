@@ -12,12 +12,12 @@ from src.dataset import extract_and_clean_text_with_sections
 
 def test_extraction_and_cleaning():
     """
-    Test the extraction and cleaning functionality with a sample PDF.
+    Test the extraction and cleaning functionality with all PDF files in the directory.
     """
     pdf_dir = "data/raw/"  # Path to the raw PDF files
     output_dir = "data/interim/test_output/"  # Temporary output directory for testing
 
-    # Call the extraction function
+    # Call the extraction function for all PDFs in the directory
     extract_and_clean_text_with_sections(pdf_dir, output_dir)
 
     print(f"Test completed. Check the output in {output_dir}")

@@ -134,17 +134,20 @@ def scrape_tableau_forum():
         except AttributeError:
             continue  # Skip if any data is missing
 
+    # Update the output directory for Tableau forum threads to the interim folder
+    interim_forum_output = PROCESSED_DATA_DIR.parent / "interim" / "tableau_forum_threads.json"
+
     # Save the data to a JSON file
-    with open("data/processed/tableau_forum_threads.json", "w", encoding="utf-8") as f:
+    with open(interim_forum_output, "w", encoding="utf-8") as f:
         json.dump(threads, f, ensure_ascii=False, indent=4)
 
-    print(f"Scraped {len(threads)} threads and saved to data/processed/tableau_forum_threads.json")
+    print(f"Scraped {len(threads)} threads and saved to {interim_forum_output}")
 
 
 def extract_and_clean_text_with_sections(pdf_dir, output_dir):
     """
-    Extracts text from all PDF files in the specified directory, identifies sections, cleans the text,
-    and saves it to JSON files with metadata including sections.
+    Extracts text from all PDF files in the specified directory, groups text into paragraphs based on spacing, merges small chunks, 
+    cleans the text, and saves it to JSON files with metadata.
 
     Args:
         pdf_dir (str): Path to the directory containing PDF files.
@@ -156,40 +159,99 @@ def extract_and_clean_text_with_sections(pdf_dir, output_dir):
 
     for pdf_file in pdf_dir_path.glob("*.pdf"):
         try:
+            logger.debug(f"Processing PDF: {pdf_file.name}")
             doc = fitz.open(pdf_file)
             extracted_data = []
-            current_section = None
 
             for page_number, page in enumerate(doc, start=1):
-                text = page.get_text("blocks")  # Extract text blocks
-                for block in text:
+                logger.debug(f"Processing page {page_number}")
+                text_blocks = page.get_text("blocks")
+                paragraph = ""
+                previous_bottom = None
+
+                for block in text_blocks:
                     block_text = block[4].strip()
+                    block_top = block[1]  # Top coordinate of the block
+                    block_bottom = block[3]  # Bottom coordinate of the block
 
-                    # Identify sections based on patterns (e.g., headings)
-                    if block_text.isupper() or block_text.endswith(":"):
-                        current_section = block_text
-                        continue
+                    # Check for spacing between blocks to detect paragraph boundaries
+                    if previous_bottom is not None and block_top - previous_bottom > 10:  # Example threshold for spacing
+                        if paragraph.strip():
+                            extracted_data.append({
+                                "page_number": page_number,
+                                "source_file": pdf_file.name,
+                                "text": paragraph.strip()
+                            })
+                            paragraph = ""
 
-                    # Clean the extracted text
-                    cleaned_text = block_text.replace("\n", " ").strip()
+                    # Add the current block to the paragraph
+                    paragraph += (" " if paragraph else "") + block_text
+                    previous_bottom = block_bottom
 
-                    # Append metadata and cleaned text
-                    if cleaned_text:
-                        extracted_data.append({
-                            "page_number": page_number,
-                            "source_file": pdf_file.name,
-                            "section": current_section,
-                            "text": cleaned_text
-                        })
+                # Append the last paragraph on the page
+                if paragraph.strip():
+                    extracted_data.append({
+                        "page_number": page_number,
+                        "source_file": pdf_file.name,
+                        "text": paragraph.strip()
+                    })
 
-            # Save the extracted data with metadata to a JSON file
-            output_file = output_dir_path / f"{pdf_file.stem}_sections.json"
+            # Merge small chunks into larger ones
+            merged_data = []
+            temp_paragraph = ""
+            for entry in extracted_data:
+                if len(temp_paragraph) + len(entry["text"]) > 1000:  # Example threshold for large paragraphs
+                    merged_data.append({
+                        "page_number": entry["page_number"],
+                        "source_file": entry["source_file"],
+                        "text": temp_paragraph.strip()
+                    })
+                    temp_paragraph = ""
+                temp_paragraph += (" " if temp_paragraph else "") + entry["text"]
+
+            if temp_paragraph.strip():
+                merged_data.append({
+                    "page_number": entry["page_number"],
+                    "source_file": entry["source_file"],
+                    "text": temp_paragraph.strip()
+                })
+
+            # Save the merged data with metadata to a JSON file
+            output_file = output_dir_path / f"{pdf_file.stem}_paragraphs.json"
             with open(output_file, "w", encoding="utf-8") as json_file:
-                json.dump(extracted_data, json_file, ensure_ascii=False, indent=4)
+                json.dump(merged_data, json_file, ensure_ascii=False, indent=4)
 
-            logger.info(f"Processed and saved cleaned text with sections for {pdf_file.name}")
+            logger.info(f"Processed and saved cleaned text for {pdf_file.name}")
         except Exception as e:
             logger.error(f"Failed to process {pdf_file.name}: {e}")
+
+
+def roman_to_int(roman):
+    """
+    Convert a Roman numeral to an integer.
+
+    Args:
+        roman (str): Roman numeral as a string.
+
+    Returns:
+        int: Integer representation of the Roman numeral.
+    """
+    roman = roman.upper()  # Ensure the input is uppercase
+    roman_numerals = {
+        'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000
+    }
+    result = 0
+    prev_value = 0
+
+    for char in reversed(roman):
+        value = roman_numerals.get(char, 0)
+        if value < prev_value:
+            result -= value
+        else:
+            result += value
+        prev_value = value
+
+    return result
 
 # Example usage
 if __name__ == "__main__":

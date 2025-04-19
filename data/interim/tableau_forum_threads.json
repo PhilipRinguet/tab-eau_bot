@@ -1,0 +1,706 @@
+[
+    {
+        "title": "How to create the attached view in Tableau?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Dsoi1CAB/how-to-create-the-attached-view-in-tableau",
+        "author": "",
+        "date": "April 13, 2025 at 11:27 AM",
+        "content": "As per the attached screenshots, I want the views based on clicks of scores like NPS, CSAT10, FCR, and FTP, as well as on clicks of Change Control: NPS and Change Control Data Table: NPS.Can anyone please provide the example workbook with sample superstore data?",
+        "best_answer": null
+    },
+    {
+        "title": "Create an X-Y plot showing all combinations of two variables, based on a third variable",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DfwMJCAZ/create-an-xy-plot-showing-all-combinations-of-two-variables-based-on-a-third-variable",
+        "author": "",
+        "date": "April 10, 2025 at 7:26 PM",
+        "content": "I have three columns of data. The first column contains ids that identify the item being tested. The second column contains test results for some (but not all) of the item ids as measured on machine 1. The third contains column test results for some (but not all) of the item ids on machine 2. So each row is a test of a specific item ID on machine 1, or machine 2, or both. Further, the same item ID may be represented on multiple rows of the table.The table looks something like this:ID     Machine 1 result   Machine 2 result1       101                              851       1041                                            831        95                               872        852        83                               772                                            792        85...What I want to do is to create an XY plot that shows Machine 1 on the X axis and Machine 2 on the y axis, and which has a dot for every combination of X and Y that has the same ID. Like this:101,85101,83101,87104,85104,83104,8795,8595,8395,87and so on for the combinations of item 2...I am fine with having a single plot that shows all of these combinations.Is there a way to do this in Tableau Desktop? How?",
+        "best_answer": null
+    },
+    {
+        "title": "I am trying to sort a rolling 6 month view",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EEObVCAX/i-am-trying-to-sort-a-rolling-6-month-view",
+        "author": "",
+        "date": "April 17, 2025 at 1:24 PM",
+        "content": "I have a view that is rolling 6 months.  I am trying to sort the view by the most current month in in a ascending order.  In this case sort ascending by Mar-2025.  I have tried get the window max in separate column, but if Mar-2025 is null it returns the max from the columns that are not nul...as expected.  I am out of ideas and any help is appreciated.",
+        "best_answer": null
+    },
+    {
+        "title": "How can I set up Top N based on two measures?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EHK9lCAH/how-can-i-set-up-top-n-based-on-two-measures",
+        "author": "",
+        "date": "April 17, 2025 at 8:56 PM",
+        "content": "Let's say I want to look at Top 10 customers who has both top sales and top clicks, how do I do this?",
+        "best_answer": null
+    },
+    {
+        "title": "Tableau Server: Loss of leading zeroes on export",
+        "link": "https://community.tableau.com/s/question/0D54T00000C6dnlSAB/tableau-server-loss-of-leading-zeroes-on-export",
+        "author": "",
+        "date": "July 12, 2019 at 12:25 PM",
+        "content": "Hi all I've run into a problem with leading zeroes being lost when downloading data from Tableau Server.Data field is a string in Tableau and so preserves the full string when using the server just when 'Download all rows as text file' is pressed they are lost.Download Data screen with full string;Result when downloaded;My work needs accurate data sets that can be archived and shared in excel using the data from tableau server.Has anyone run into this problem and do you have a solution?",
+        "best_answer": null
+    },
+    {
+        "title": "Display data in table rather than cross tab",
+        "link": "https://community.tableau.com/s/question/0D54T00000C5eAjSAJ/display-data-in-table-rather-than-cross-tab",
+        "author": "",
+        "date": "March 23, 2013 at 3:25 AM",
+        "content": "Hi,I would like to know if there is any way we can display data in Table rather than cross tab. Cross Tab looks good. But when we do export to excel, the cross tab won't be helpful for users if they want to do their analysis. (Ofcourse Tableau helps in quick analysis). But more users prefer excel to do some more by exporting data to excel.I tried these ways:1. Worksheet --> Export --> DataThe only option I am getting is Access db. Even though it looks good without any format, the following are observed:a) Columns are not in orderb) Can't be exported to excel in the same manner2. Worksheet --> Export --> Crosstab to ExcelThe excel format exactly looks like crosstab. The following are observed:a) Not like a TableDo we have any alternatives? I checked in Tableau 8. Its the same.3. When we export a dashboard to PDF, the quick filters are also visible in the PDF. Can we crop the quick filters during export?Any thoughts on this really helpful! Thank you!Best RegardsGowtham",
+        "best_answer": null
+    },
+    {
+        "title": "Bar chart dimension has two values - how do I combine them?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EMBnJCAX/bar-chart-dimension-has-two-values-how-do-i-combine-them",
+        "author": "",
+        "date": "Yesterday at 4:59 PM",
+        "content": "I have a bar chart showing the winners of a race. In one year there was a dead heat, where two people finished with the same time. I would like their time to appear once in the bars (similar to every other year), but with a label or tooltip showing both names. I can get it to include both names and both times (below), or one time and no names, but not the combination.I'd be grateful for any suggestions, please! I'm hoping it's a simple solution but I can try to construct a workbook example if not.",
+        "best_answer": "You can work with table calculations to concatenate the names when there are multiple names in a year, display the final concatenated value and hide all others."
+    },
+    {
+        "title": "How to add timestamp when user download excel/csv",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E7Mv0CAF/how-to-add-timestamp-when-user-download-excelcsv",
+        "author": "",
+        "date": "April 16, 2025 at 7:01 AM",
+        "content": "Is there any such functionality available?",
+        "best_answer": null
+    },
+    {
+        "title": "Why are there many login events but very few logout events in Tableau Server logs?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EL8zACAT/why-are-there-many-login-events-but-very-few-logout-events-in-tableau-server-logs",
+        "author": "",
+        "date": "Yesterday at 2:19 PM",
+        "content": "Hello Tableau Community,I am currently analyzing user login/logout behavior from Tableau Server by querying the PostgreSQL repository (workgroup database). While I can see a high number of login events, the number of logout events is very low.I understand that this might be related to how Tableau handles session timeouts or browser closures, but I need toconfirm whether manual actions like closing the browser or tab are actually logged as logout eventsor not.My goal is toprove whether the lack of logout events is due to system behavior rather than missing logs.Can someone from the community or the Tableau team clarify:Are logout events only logged when users explicitly click “Sign Out”?Does closing the browser/tab generate a logout event?In which scenarios would a logout not be recorded in the event logs?Is there any official Tableau documentation that explains this behavior?I would appreciate any insights, official documentation links, or experiences others have had regarding this.Thanks in advance!",
+        "best_answer": null
+    },
+    {
+        "title": "Hello,I'm trying to made a general ranking of several ranking.As One is first then 6 then 3... another one is snd, 5,first... how can I do?I made all the ranks with RANKThank you",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EKXMLCA5/hello-im-trying-to-made-a-general-ranking-of-several-ranking-as-one-is-first-then-6-then-3-another-one-is-snd-5first-how-can-i-doi-made-all-the-ranks-with-rankthank-you",
+        "author": "",
+        "date": "Yesterday at 9:05 AM",
+        "content": "",
+        "best_answer": null
+    },
+    {
+        "title": "How to fetch table names from custom sql query using GraphQL?",
+        "link": "https://community.tableau.com/s/question/0D58b0000BS8Ti6CQF/how-to-fetch-table-names-from-custom-sql-query-using-graphql",
+        "author": "",
+        "date": "August 17, 2023 at 8:12 PM",
+        "content": "I am trying to collect datasource information of all dashboards published to a site. Few dashboards fetch data using custom sql queries. While trying to fetch metadata info using GraphQL, am not able to see the table name used in the custom sql queries? Can anyone direct me how to identify the table name in such cases?Sample GraphQL :query workbooks{workbooks{luidnameprojectNameprojectLuidembeddedDatasources{idnameupstreamDatabases{idnameconnectionType}upstreamTables{idnamefullNameconnectionType}}}}Upstream Tables collection is empty for custom sql queries.",
+        "best_answer": "@swarna ramakrishnan(Member)​I don't think metadata api can fetch the upstream tables from the custom sql.  When you try the lineage of a datasource using a custom sql, you get:Probably this is not what you would expect, however, I think that as a beggining you may query the customsql:queryCustomSQL{customSQLTables{nameidquerydownstreamWorkbooks{idnameprojectName}downstreamDatasources{name}downstreamDatabases{name}downstreamTables{name}}}That would bring the custom sql, and you may from there take an approach to look for words after the FROM clause, or after JOIN.  But, that is only an idea that could come to my mind.If this post resolves the question, would you be so kind to \"Select as Best\"?. This will help other users find the same answer/resolution and help community keep track of answered questions. Thank you.Regards,Diego MartinezTableau Visionary and Forums Ambassador"
+    },
+    {
+        "title": "I'm struggling to create a filter where the person will be excluded if the most recent date has no data for the measure.  Thank you for any help!",
+        "link": "https://community.tableau.com/s/question/0D5cw00000ENZWsCAP/im-struggling-to-create-a-filter-where-the-person-will-be-excluded-if-the-most-recent-date-has-no-data-for-the-measure-thank-you-for-any-help",
+        "author": "",
+        "date": "19h ago",
+        "content": "",
+        "best_answer": "Is this what you are looking for?"
+    },
+    {
+        "title": "Not able to filter out detailed worksheet based on YTD/MTD worksheet",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EGhxJCAT/not-able-to-filter-out-detailed-worksheet-based-on-ytdmtd-worksheet",
+        "author": "",
+        "date": "April 17, 2025 at 6:12 PM",
+        "content": "Hi Team,I have a dashboard with different views. I want to filter out detailed data once I click on YTD or MTD numbers.I have tried different filters but did not worked.I have added the snapshotAdded working tableau worksheet.Thanks!",
+        "best_answer": "Hi,@Mohit Tyagi(Member)​Thanks for the reply.What do you think of the attached suggestion?<sample>*If you get the best results from this exchange, I would appreciate it if you could choose the best answer or upvote."
+    },
+    {
+        "title": "Issue with Updating Filters",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EIxoFCAT/issue-with-updating-filters",
+        "author": "",
+        "date": "April 17, 2025 at 11:36 PM",
+        "content": "The SituationBased on the information provided, there's a discrepancy between what's showing in your Tableau report and the actual manager relationships in ServiceNow. Eve Gilbert is being replaced by Josh Staten, but only one technician (Chelsea Johnson) is currently showing as reporting to Josh in the system.What's Actually HappeningKim checked the ServiceNow system and found that there are no active users that have Eve Gilbert as a manager. There are some inactive users showing Eve as their manager, but this is working as expected since inactive users maintain the manager they had when they left.For Chelsea Johnson specifically, there are two records:D16E: Active employee reporting to JoshEBKJ: Inactive employee reporting to EveThe SolutionThe issue appears to be that your Tableau report isn't filtering out inactive employees. Therefore, it's showing inactive employees still reporting to Eve Gilbert.Here's what you need to do:Update your Tableau report to account for active/inactive status. You'll need to add a filter that only shows active employees.In the ServiceNow database, this information is in the sys_user table. The field that tracks active/inactive status is likely \"u_worker_status\" as shown in your documentation.You should modify your data extract to filter by this field.How to Make This Change in TableauLooking at your screenshot and documentation:Open your Tableau workbookGo to the data source that contains user information (likely the \"End User All employees in SNDM (Active)\" table)Add a filter for the active/inactive status field (look for \"u_worker_status\" field)Set the filter to only show active employeesAfter making these changes, refresh your data extract by right-clicking on the data source, ensuring \"Use Extract\" is toggled on, and clicking \"Refresh\" under \"Extract\"Publish the updated dashboard following your normal processI tried this in Data Source and I dont see anything",
+        "best_answer": null
+    },
+    {
+        "title": "In salesforce history tables, not all values of Field show using the Sf connector to Tableau Desktop, but i can see all of the values in our EDW housed in GCP.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EEJStCAP/in-salesforce-history-tables-not-all-values-of-field-show-using-the-sf-connector-to-tableau-desktop-but-i-can-see-all-of-the-values-in-our-edw-housed-in-gcp",
+        "author": "",
+        "date": "April 17, 2025 at 12:05 PM",
+        "content": "Our salesforce data is housed in GCP, and with history tables we are noticing that not all values of Field in OppFieldHistory (for example) show when using the salesforce connector in Tableau Desktop, but when i pull the same data from GCP all values show. The below screenshot compares the values within our Term history table in SF vs EDW, and EDW shows many more. this is compared to a SF report but the same thing shows when connecting SF to Tableau Desktop. Has anyone seen this sort of thing before? i am infinitely appreciative of any insight this forum can provide!",
+        "best_answer": "When you connectdirectly to Salesforceusing Tableau’snative connector, you're oftennot querying the full object schema, especially forHistory or Audit tableslike OpportunityFieldHistory , AccountHistory , etc.Reasons you may seeincomplete or missing data:Salesforce API limits field access— especially for custom fields or older historical records.The Tableau connector uses the Salesforce SOAP API, which doesn’t expose the entire history table likeSalesforce Reports or SOQLmight.Salesforce limits to 2,000 rows per query by defaultunless pagination is handled correctly.Field history retention policy— Salesforce retains field history foronly 18 months in org(unless extended or stored externally).The “Field” column inOppFieldHistorycan be filtered or trimmed by the connector— especially if you don’t have access to the corresponding objects or custom fields in your SF profile.✅ Why your GCP data showsall values:Your EDW (in GCP/BigQuery) is likely:Using Salesforce’s Bulk API or REST API, not the SOAP-based one.Replicating full data using ETL tools like Fivetran, Stitch, Talend, etc.Storing historical snapshots or complete historybeyond Salesforce’s own UI/connector limitations.So in GCP, you're seeing theraw and complete underlying data, possibly augmented and cleaned through ETL.you have to directly connect to GCP because of limitations with tableauIf you like the answers, Please mark the answer as \"BEST\" Answer / UPVOTEBR,NB"
+    },
+    {
+        "title": "Advice on how to recreate Rshiny applications in Tableau",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E6d0ICAR/advice-on-how-to-recreate-rshiny-applications-in-tableau",
+        "author": "",
+        "date": "April 15, 2025 at 11:26 PM",
+        "content": "Hi Tableau experts,I am new to Tableau. Recently, my company wanted to move our Rshiny applications to Tableau. I am the only person who design, develop and maintain those Rshiny applications within the team at present so I understand them very well but I have minimal knowledge of Tableau. Therefore, I hope to get some guidance from this community how I should do it in Tableau or whether it is doable in Tableau.1.       Company data: Our company data is huge and very complex with multiple databases belonging to different departments. The main data warehouse is updated daily overnight while other lab databases are updated in real time when an order coming in.2.       Rshiny application users: Sales people (about 60), each has a portfolio of about 200 customers, each customer has 400 products on average that they manage. The customers sometimes request the sales people to send them the latest report of their products. So, the whole dataset for Rshiny would be around 5mil rows for all products, all customers of all managers. Of course the report has lots of visualisations, calculations, etc. plus the full detailed table of products for that customer.3.       The Rshiny applications are designed in a way that when a sales person enter 1 customer ID, the app will get data from our databases via SQL queries for that specific customer. So, report is real time (or only one day old if it is from the main data warehouse) and do not have a static input of 5mil rows but only 400 rows for the customer selected via SQL queries.4.       My question is: can Tableau does the same?: get a customer ID from dashboard user’s input => load data from multiple databases via SQL queries => do all calculations and transformations to show the final report within a few seconds or less than 1 minute at least? I have researched the following options but they are not working for me:1)       I have looked at parameters but the custom SQL queries seem to be very slow and I can hardly do any data transformation and cleaning in Tableau once the tables are loaded.2)       If I do all the calculations and transformations for all customers and sales person every day for 1 report so that data is ready to use in Tableau, that is not efficient because I will have a dataset of ~5mil rows for each report and our company has hundreds of reports running at this product level of details. Also, not all customers need their data every day so loading them all daily for multiple reports is definitely not ideal. They are mainly on-request reports but ready to use by every sales person with most updated data.Can you please give some guidance and advice here? is Tableau the good fit for Rshiny applications here?Thank you",
+        "best_answer": null
+    },
+    {
+        "title": "How do you show Employee Ranking using Table Calculation in Dashboard?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DtMLOCA3/how-do-you-show-employee-ranking-using-table-calculation-in-dashboard",
+        "author": "",
+        "date": "April 13, 2025 at 7:16 PM",
+        "content": "I have a worksheet with a table of employees that are ranked based on a metric. I am using a table calculation to rank the employees. How do I rank the employees such that everyone above and including the threshold gets rank 1. Next best person (if 3 people were rank 1), gets rank 4 (similar to Olympic rating). Rank() function is not working.Also, in the dashboard, I have a filter that allows the user to filter an employee and the selected employee’s metrics, and ranking will be shown. The employee’s ranking is shown correctly in theworksheetbut is not shown correctly in the dashboard. I believe because the rank function uses a table calculation logic and for a table calculation to work all the employees must be in the view. The dashboard only filters for 1 employee. Total count is correct because it uses an LOD expression. Please advise how I should approach this. I am guessing to convert the rank function into LOD expression like the Peer Count field, but I am unsure on how to do this.Appreciate your assistance!",
+        "best_answer": null
+    },
+    {
+        "title": "How to change the background color of a selected item in dashboard ?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000ED8akCAD/how-to-change-the-background-color-of-a-selected-item-in-dashboard-",
+        "author": "",
+        "date": "Edited April 17, 2025 at 6:32 AM",
+        "content": "Hi Community,I’d like to use a chalkboard as the background image of this dashboard. So, the font color of the worksheet is set to white.When selecting the sales value, the highlighted area shows the skyblue as background color, as a result, the sales value is almost merged into the background and hard to read.So, how can I modify the background color of this selected area?Thank you.The .twbx is attached.",
+        "best_answer": null
+    },
+    {
+        "title": "Set a filter based on another filter/parameter?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E1zkFCAR/set-a-filter-based-on-another-filterparameter",
+        "author": "",
+        "date": "April 15, 2025 at 1:18 PM",
+        "content": "I have 2 columns of data within my dataset - one is a subgroup of another. Think something like Sales Office and Sales Rep. I want to create a view so that when I filter by Sales Rep, it also filters a separate view by Sales office, so I can have a side by side looking at metrics for a specific rep, and then metrics for the entire office. How can I do this filtering?",
+        "best_answer": null
+    },
+    {
+        "title": "Nested Layout Containers",
+        "link": "https://community.tableau.com/s/question/0D54T00000C5sHtSAJ/nested-layout-containers",
+        "author": "",
+        "date": "July 16, 2015 at 5:31 PM",
+        "content": "Does anyone know of any shortcut keys to use in conjunction with dragging a layout container inside another layout container?  I constantly fight trying to nest layout containers.  I get that you need to look for appropriate sized shaded rectangle symbol when positioning cursor, but this is extremely challenging at best.Just to elaborate a little more on this, when I hover the cursor over the layout container I want to move my other layout container into, I get a blue bolder highlight at certain cursor positions which I recognize as the layout container, BUT, and this is the catcher, is in my target container I also have a nested horizontal layout container inside a vertical layout container.  It is the child horizontal layout container I am trying to move my source layout container into but cannot seem to get that container to highlight through positioning of the cursor.  I only get the parent vertical layout container to highlight.",
+        "best_answer": "I found that using Blank objects helps.For example, I'll add a Horizontal layout container & then drag in two Blank objects as placeholders.   I then place the layout containers that I really wanted to add in between those two Blanks.  Once everything is in, I delete the Blanks & resize as needed."
+    },
+    {
+        "title": "How to filter out results based on a calculated field?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EBbPGCA1/how-to-filter-out-results-based-on-a-calculated-field",
+        "author": "",
+        "date": "April 16, 2025 at 9:18 PM",
+        "content": "I am interested in displaying only results that are outside the IQR (interquartile range).I have a calculated field that works to only show results in the last column that fall outside of the IQR. Great! But all the other results that are inside the range, I don't want to see on this worksheet. How do I do that?",
+        "best_answer": "Hi,@Sharon Pickersgill(Member)​Thanks for the reply.Do you need something like this?(Want to hide the blank row in the last column?)If you hide nulls, it will look like the image on the right above, but is this not what you want?"
+    },
+    {
+        "title": "Need to download a specific table from the dashboard WITHOUT other sheets/visuals being listed using download button.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000ECzzJCAT/need-to-download-a-specific-table-from-the-dashboard-without-other-sheetsvisuals-being-listed-using-download-button",
+        "author": "",
+        "date": "April 17, 2025 at 4:21 AM",
+        "content": "I do not want other sheets/visuals to be listed when we click on the download button instead it has to download a specific table by default when we hit the download button.",
+        "best_answer": null
+    },
+    {
+        "title": "Filling colors on Null Values",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E7mL5CAJ/filling-colors-on-null-values",
+        "author": "",
+        "date": "April 16, 2025 at 11:53 AM",
+        "content": "Hi all,I need to fill the gray color  on the null values in the sheet.Kindly help me to achieve this.",
+        "best_answer": null
+    },
+    {
+        "title": "Is there any possibility to retrieve or access old videos?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EDt8UCAT/is-there-any-possibility-to-retrieve-or-access-old-videos",
+        "author": "",
+        "date": "April 17, 2025 at 10:57 AM",
+        "content": "A couple of years ago, I had access to Spanish-language videos that helped my students understand how to use Tableau. I found them extremely useful for teaching the basic functionalities of the tool. I don’t mind if the content is based on older versions of Tableau, since the fundamental concepts remain the same and are still very helpful for learning.Is there any possibility of recovering or reaccessing those videos?Below, I’m sharing some of the links I used to reference the videos:https://www.tableau.com/es-es/learn/tutorials/on-demand/getting-started-10-0?playlist=271635Introducción a datosVista detallada y jerarquías(ingles) oversión anterior en castellanoOrdenación(inlgés) oversión anterior en castellanoAgruparManeras de filtrarUso del estante FiltrosThank you very much in advance for your help.Teresa",
+        "best_answer": null
+    },
+    {
+        "title": "How to change default highlight color",
+        "link": "https://community.tableau.com/s/question/0D58b0000BDo2IeCQJ/how-to-change-default-highlight-color",
+        "author": "",
+        "date": "June 28, 2023 at 2:56 PM",
+        "content": "Hi, I'm trying to figure out how to change the default baby blue highlight color when selecting something in a row. I would ideally like to have all the colors in the workbook match the branding of the company and the baby blue just doesn't work with anything :)I would really appreciate any help trying to turn the blue highlight into a red highlight color.I have attached a workbook with the \"List\" tab being the tab I am trying to adjust the highlighting.",
+        "best_answer": "hi @Larry DavidInteresting challenge! As far as I know there isn't an \"out the box\" way to do this. Attached is a way to do this using parameters and parameter actions. There is a decision here on whether \"the juice is worth the squeeze\" as you may need to change some other actions, and would be a lot of work to do it like this for all highlighting (but if only this selection box, then maybe not too bad)Anyway hope this helps"
+    },
+    {
+        "title": "The sorting Option is getting Greyed out after adding the Index column.",
+        "link": "https://community.tableau.com/s/question/0D54T00001DDrY8SAL/the-sorting-option-is-getting-greyed-out-after-adding-the-index-column",
+        "author": "",
+        "date": "February 21, 2022 at 4:47 AM",
+        "content": "Hi Team,In order to avoid the default column merging option in Tableau, I have created a calculated field with the INDEX() function and placed it as my first column, but after placing the INDEX() column the sorting icon is getting greyed out.Do we have any workaround to sort this issue?Attaching a screenshot and TWBX file for a quick referenceThank you in anticipation of a quick response and help",
+        "best_answer": "I just had the same issue.  Make a duplicate of your second column, i.e. the one to the right of the Index.  Add this replica column to the left of the Index and hide its header."
+    },
+    {
+        "title": "Tableau connection swap between development and production using Databricks (DBX) unity catalog",
+        "link": "https://community.tableau.com/s/question/0D5cw00000AII5ICAX/tableau-connection-swap-between-development-and-production-using-databricks-dbx-unity-catalog",
+        "author": "",
+        "date": "February 26, 2025 at 8:27 PM",
+        "content": "We are using the DBX Unity Catalog, which configures physical tables using a 3-part notation: production.schema.table_name.I have an existing data source that is using tables in production. However, I need to add a new table that exists in development only (let's call it dev_table). So, if I added to the Tableau datasource, it will be development.schema.dev_table.This table will be created in production next week. Is there an easy way to switch this table to use the production schema without having to recreate all the joins and dependencies all over again?Thanks in advance for your help.",
+        "best_answer": "You can handle this transition smoothly by using Tableau’s data source editing features.First, add dev_table to your data source in Tableau and set up all the necessary joins. Once the table is available in production, go to Data Source -> Replace Data Source and swap the development connection with the production one. If the schema structure remains the same, Tableau should maintain all joins and dependencies without issues.Alternatively, you can use custom SQL with a parameter to dynamically switch between development and production schemas."
+    },
+    {
+        "title": "Multi page Dashboard with header and footer for each sheets when printed as pdf",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DK8hMCAT/multi-page-dashboard-with-header-and-footer-for-each-sheets-when-printed-as-pdf",
+        "author": "",
+        "date": "April 7, 2025 at 2:18 PM",
+        "content": "I have a Dashboard having multiple sheets mainly table reports having huge number of data.I gave it a sizing of A4 sheet and increased height to maximum to accommodate all sheets one by one.Now i want to have a header and footer for all sheets when printed as PDF any way to do it?",
+        "best_answer": null
+    },
+    {
+        "title": "How can I create a totals column that will count across rows to return a sum in a wide view format?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E3AF7CAN/how-can-i-create-a-totals-column-that-will-count-across-rows-to-return-a-sum-in-a-wide-view-format",
+        "author": "",
+        "date": "April 15, 2025 at 7:50 PM",
+        "content": "I have a dataset for employee training stored in long format, with each course listed in a \"Course Title\" Column and the Status in another column. I want the data to show in the dashboard in wide format, with each Course Title being its own column and the Course Status showing as the values. This was fairly easy to accomplish, but what I need is a total column that is able to count across the rows and sum up the number of completed courses per user. Creating calculated fields works fine on its own but does not show properly with this wide view.I've done a rough version of what I want, but it required putting numbers into the values pane of the dashboard, which I do not want. If there is another way to go about this, or at least a way to hide the numbers within the cells while keeping the totals visible, that would help. Thanks.",
+        "best_answer": "If I follow correctly, you want the text in the body of the table and a number in the total column? You can cheat the table by returning two different values, depending on which part you're looking at:IF SIZE()=1THENSTR(SUM([CompletedCourses]))ELSE[CourseUserStatus]ENDThe SIZE function is a table calculation that tells you how many items there are in the Dimension(s) you select, kind of like a COUNT DISTINCT (but more efficient). The size of totals is always 1, so as long as your main table contains more than 1 column (or whichever Dimension(s) you choose) you can switch between what is displayed. You only caveat is that the output has to be the same type, so I've had to cast the grand total as a String."
+    },
+    {
+        "title": "Using field.name from embedding to apply a filter through Server API when user has non-english locale",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E3ddDCAR/using-fieldname-from-embedding-to-apply-a-filter-through-server-api-when-user-has-nonenglish-locale",
+        "author": "",
+        "date": "Edited April 15, 2025 at 5:53 PM",
+        "content": "I'm trying to take a filter that was applied in Tableau Embedding, and then use the same filter to query the Tableau Server API. This normally works fine, however if the user is using a non-english language, thefield.namein the embedding can be something like JAAR(Close Date), but only YEAR(Close Date) works in the Server API. There doesn't seem to be any way to reliably get YEAR(Close Date) from the embedding in this scenario.I've also tried using the value offield.idcoming from the embedding filter, which looks something like \"year:Close Date:ok\". That value will sometimes work in the Server API but also doesn't seem to be reliable.What is the correct way to take field/filter configuration from the embedding and use it in the Server API to filter?",
+        "best_answer": null
+    },
+    {
+        "title": "How to make a quartile ? / Comment faire un quartile ?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E2s06CAB/how-to-make-a-quartile-comment-faire-un-quartile-",
+        "author": "",
+        "date": "April 15, 2025 at 3:39 PM",
+        "content": "Bonjour à tous,Je souhaite faire un classement en affichant que le premier quartile (le nombre de ligne ne sera jamais fixe)Comment faire ?J'ai également besoin de pouvoir afficher le total général variant selon le nombre de ligne dessous.Hello everyone,I would like to make a ranking displaying only the first quartile (the number of lines will never be fixed)How do I do this?I also need to be able to display the grand total, which varies according to the number of rows below.",
+        "best_answer": null
+    },
+    {
+        "title": "How to create overlapping bell curves?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EADGvCAP/how-to-create-overlapping-bell-curves",
+        "author": "",
+        "date": "April 16, 2025 at 5:50 PM",
+        "content": "I am not sure if this is possible in creating overlapping bell curves but wanted to ask the community.  In the attached workbook, I have cold requests and warm requests spread out over different temperatures?  Is it possible to create two bell curves on the same axis (one for the cold requests and one for the warm requests)?  I'm open to suggestions also on how to visualize this.  Thanks!",
+        "best_answer": "Is this what you want?If you want true normal distributions, you'd have to do some data densification and/or the easiest way would probably be to make a call to TabPy, if you are able to use a Python server. I don't know if it's the best way to visualise your data, because I don't know the question you're trying to answer. If you're trying to visualise if there is a difference between two populations, a violin plot, or straightforward boxplots might get you what you want:"
+    },
+    {
+        "title": "Format Y-Axis to show different colors.  Positive and negative.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000EBmkQCAT/format-yaxis-to-show-different-colors-positive-and-negative",
+        "author": "",
+        "date": "April 16, 2025 at 9:55 PM",
+        "content": "I have a graph that shows positive and negative results for year over year sales.  Is it possible to format the y-axis so that the positive numbers are green and the negative numbers show red?I'd like to show it as it is in this picture:I've included the attached workbook with the data that is basically year over year sales data for sample products.",
+        "best_answer": null
+    },
+    {
+        "title": "REST API data range filtering",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Do7FMCAZ/rest-api-data-range-filtering",
+        "author": "",
+        "date": "April 11, 2025 at 9:00 PM",
+        "content": "How can i use such filter for today date in REST API?",
+        "best_answer": null
+    },
+    {
+        "title": "How do get the Title to disappear when there is no relevant to display?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E3X09CAF/how-do-get-the-title-to-disappear-when-there-is-no-relevant-to-display",
+        "author": "",
+        "date": "April 15, 2025 at 4:58 PM",
+        "content": "How do I get the title on the right side to disappear when there is no relevant data. The chart disappears but not the title. Thank you!",
+        "best_answer": "Hi@Sharon Pickersgill(Member)​ I think you need to create a calculated field to act as a title while the title itself is hidden. You should give it a go, if you like. It is very well explained here.https://vizpainter.com/hide-titles-in-tableau/Thanks"
+    },
+    {
+        "title": "How do I show results that are OUTSIDE of the Upper and Lower Quartiles?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E29NgCAJ/how-do-i-show-results-that-are-outside-of-the-upper-and-lower-quartiles",
+        "author": "",
+        "date": "April 15, 2025 at 12:51 PM",
+        "content": "I am interested in displaying results (Recovery by Specific Mix) that are OUTSIDE of the Upper and Lower Quartiles. I defined the Upper and Lower Quartiles below and started a calculated field for just outside the Upper Qtr, but isn't not working....",
+        "best_answer": ""
+    },
+    {
+        "title": "I have order date &  4 measure file (i.e sales, quantity, profit % , discount % )1. In x axis i want to show order-date on monthly in Y axis left (sales & quantity) in thousands & in right side (profit % & discount % )in % .",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E9ighCAB/i-have-order-date-4-measure-file-ie-sales-quantity-profit-discount-1-in-x-axis-i-want-to-show-orderdate-on-monthly-in-y-axis-left-sales-quantity-in-thousands-in-right-side-profit-discount-in-",
+        "author": "",
+        "date": "April 16, 2025 at 5:21 PM",
+        "content": "2. Y axis left should be stacked bar chart & right will be line chartplease refer the file which attached with this, please suggest the best option to overcome this issue without making any changes in datasource.Thanks in advance.",
+        "best_answer": null
+    },
+    {
+        "title": "How can I combine these 2 sheets?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DxDhgCAF/how-can-i-combine-these-2-sheets",
+        "author": "",
+        "date": "April 14, 2025 at 7:21 PM",
+        "content": "How can I combine these 2 sheets so that I have subtotal count after each Specific Mix section and also a Median percentage recovery for each Specific Mix? I was also trying to combine the Key into this as well....but I don't quite have it working right.",
+        "best_answer": null
+    },
+    {
+        "title": "What is the best way to filter a dimension results by 2 to 3 values?  I.E. Contains X, Y or Z",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DUnxHCAT/what-is-the-best-way-to-filter-a-dimension-results-by-2-to-3-values-ie-contains-x-y-or-z",
+        "author": "",
+        "date": "April 8, 2025 at 9:46 PM",
+        "content": "Are there any plans for multiple values in wildcard? trying calculated fields but no getting the results expected, possibly a syntax issue",
+        "best_answer": null
+    },
+    {
+        "title": "Tableau TSM web interface shows Whitelabel Error Page",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E2KikCAF/tableau-tsm-web-interface-shows-whitelabel-error-page",
+        "author": "",
+        "date": "April 15, 2025 at 1:22 PM",
+        "content": "Hello,We have a Tableau 2025.1 running on a Linux box. When I  try to access the tsm web interface, I am getting a whitelabel error page. However, I am still able to open the Tableau webpage and the scheduled jobs also ran without any issues.Please let me know what I might be able to do to fix this error?",
+        "best_answer": "This issue was resolved by following these steps:sudo su -l tableausystemctl --user stop appzookeeper_0.servicesystemctl --user start appzookeeper_0.service"
+    },
+    {
+        "title": "How can I change a container with filters based on a parameter?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E9FS9CAN/how-can-i-change-a-container-with-filters-based-on-a-parameter",
+        "author": "",
+        "date": "Edited April 16, 2025 at 5:58 PM",
+        "content": "I have a dashboard with 2 views: Team and Individual.Both have the exact same filters.The problem is that I need to show relevant values and when I switch from Team to Individual, it does not work.I have to use filters to show the cascading filter options, or I would use parameters.Is there a way to switch the entire Filter Container so I have 2 views. One for Individual and one for Team based on the parameter selection?My Parameter isTeamTypeParam:TeamIndividualI have a filter on each worksheet that uses a measure:TeamTypeFilterIF [TeamTypeParam] = 'T' THEN \"Team\"ELSEIF [TeamTypeParam] = 'I' THEN \"Individual\"ENDEach page is either filtered to Team or Individual and on the main dashboard there are about 6 visual that switch based on the parameter.Hope this adds clarity. Thank you in advance :)",
+        "best_answer": "https://jimdehner.com/2021/10/04/sets-and-filters-the-condition-and-top-n-tabs-what-do-they-doNaman Shah"
+    },
+    {
+        "title": "連続した数値の出現回数をカウントしたい",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E019OCAR/連続した数値の出現回数をカウントしたい",
+        "author": "",
+        "date": "April 15, 2025 at 6:08 AM",
+        "content": "数字がランダムに入力された列があります。この列において、０が連続して出現した回数をカウントしたいです。ただし、カウントするのは１番最初に現れた０を起点とした連続出現回数です。それ以降に出現した０はカウントしません。０が連続せず１度だけ現れた場合は１としてカウントを返してください。このような課題があるのですが、どうすれば求めたい数値を算出することが出来るか分からず困っています。皆さんのお知恵をお借りできれば幸いです。情報に不足があれば追記いたします。よろしくお願いいたします。",
+        "best_answer": "@Ikeda Tsutomu(Member)​ さん、こんばんは。お待たせしました！​添付の案でいかがでしょうか？​＜結果＞※Noは右から始まるようにソート順を逆にして扱っています。0の塊を数えるなら順番は関係なく処理でき、Last関数はこの向きでないと機能しないです。​​①0が1回​※誤記があります。0が最後に出現した・・というのは誤記です。​②0が2回※誤記があります。0が最後に出現した・・というのは誤記です。③0が4回※誤記があります。0が最後に出現した・・というのは誤記です。​＜計算＞​※誤記があります。0が最後に出現した・・というのは誤記です。*If you get the best results from this exchange, I would appreciate it if you could choose the best answer or upvote."
+    },
+    {
+        "title": "Error Code 38348CCE Connecting to Smartsheet",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Do35WCAR/error-code-38348cce-connecting-to-smartsheet",
+        "author": "",
+        "date": "April 11, 2025 at 8:50 PM",
+        "content": "I'm now consistently getting this error whenever I try to connect to a new sheet/report/etc. from Smartsheet to my Tableau Desktop.  I'm seemingly connecting to the database itself just fine, but when I try to go from that to locating a specific sheet/report in the database, I keep getting this error message.What I've done so far:Confirmed that the report I'm searching for is accessible on the Smartsheet accountUpdated Tableau Desktop to latest version - no changeTried disconnecting and reconnecting Tableau to Smartsheet - no changeTried connecting with a different Smartsheet account to Tableau - no changeTried clearing my Tableau cache - no changeIs there anything else you might suggest I could do to try and resolve the issue?Thank you very much!",
+        "best_answer": null
+    },
+    {
+        "title": "How can I render a Three.js 3D model inside a Tableau dashboard? The canvas works standalone but shows up blank when embedded via Tableau viz extension.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DuHczCAF/how-can-i-render-a-threejs-3d-model-inside-a-tableau-dashboard-the-canvas-works-standalone-but-shows-up-blank-when-embedded-via-tableau-viz-extension",
+        "author": "",
+        "date": "April 14, 2025 at 7:25 AM",
+        "content": "",
+        "best_answer": null
+    },
+    {
+        "title": "Web Data Connector - BusinessMap Integration",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E1yZ1CAJ/web-data-connector-businessmap-integration",
+        "author": "",
+        "date": "April 15, 2025 at 1:21 PM",
+        "content": "Hi,I am trying to pull data from BusinessMap via a Web Data Connector. I used the the below article to make the data connection.https://knowledgebase.businessmap.io/hc/en-us/articles/360021690299-Businessmap-to-Tableau-IntegrationI am able to extract various data sets from BusinessMap and pull them into Tableau individually, but when I attempt to add more than 1 data source(i.e. data sets from 2 different boards), the data is duplicated in Tabluea, no matter what PowerBi query I paste into the connector. It always duplicated the first connectors data.Has anyone had any luck pulling in multiple sets of data from the same web connector, or BusinessMap?",
+        "best_answer": null
+    },
+    {
+        "title": "Has anyone successfully embedded a Text document in SharePoint to a Tableau Dashboard ?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000D4kDoCAJ/has-anyone-successfully-embedded-a-text-document-in-sharepoint-to-a-tableau-dashboard-",
+        "author": "",
+        "date": "April 3, 2025 at 5:50 PM",
+        "content": "Hi Everyone,I am trying to get a Text document which is in my public SharePoint space to be embedded on a Tableau dashboard via web url feature. When I embedded it in Tableau desktop the embedded seems to work but as soon as I published the dashboard on the server the embedded text file is not working and its blank. Has anyone able to embedded using this method. Can some one guide me what I could be doing wrong for it not to render on Tableau Server ?",
+        "best_answer": null
+    },
+    {
+        "title": "Display measures for client categories alongside their combined values in one single sheet.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DHDCgCAP/display-measures-for-client-categories-alongside-their-combined-values-in-one-single-sheet",
+        "author": "",
+        "date": "April 6, 2025 at 8:17 AM",
+        "content": "I need to visualize measures for two client categories (based on a field) along with their combined totals in a single Tableau sheet.Currently, my dashboard uses two separate sheets to achieve this (refer to the attached workbook), but the broader dashboard is becoming too complex with multiple sheets.Goal:Show metrics for two client categories side by side.Include their combined values in the same view.Consolidate this into one sheet instead of two.Please help.",
+        "best_answer": "Hi@psn rock(Member)​I agree re option 1.For option 2 though, the alternative version of that should work for you, where you relate to an additional sheet with two rows, on a relationship calc of 1=1. With relationships the additional joins are only applied when Tableau needs to. And at the end of the day you *want* Tableau to process the data twice.Workbook re-attached with this in.Ta, StevePS. You can select an answer as best to close off the thread and help people searching in the future. And you can upvote helpful answers."
+    },
+    {
+        "title": "Currency rupees to dollars",
+        "link": "https://community.tableau.com/s/question/0D58b0000C6UVeoCQG/currency-rupees-to-dollars",
+        "author": "",
+        "date": "February 12, 2024 at 3:10 AM",
+        "content": "Used cal field to convert sales from rupees to dollars of sample store bysales*80 still dint see the changes,Can we achieve it with cal field instead of parameter.",
+        "best_answer": "Hey@Keerthana Priyanka Margam(Member)​  - the Marks card for your second measure i.e. Converted sales displays Sales in text, if you replace it with Converted sales you should see your converted $Regards,A.V.If you find this response helpful, please upvote/ mark as correct answer"
+    },
+    {
+        "title": "Table sum showing incorrect number",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E3qNLCAZ/table-sum-showing-incorrect-number",
+        "author": "",
+        "date": "April 15, 2025 at 5:35 PM",
+        "content": "I found that Tableau is not showing the correct data in a particular field and I would need your help to understand why. As you can see there is only one row feeding the table and still showing a wrong number.Sadly I am not able to share the workbook but I would like to hear what suggestions you have, what is funny is that a co-worker replicate the same report and it works just fine.. 😐 we double checked the filters, is the same...Thanks in advance",
+        "best_answer": null
+    },
+    {
+        "title": "Created a field to use as a filter and its not's working correctly.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E55ztCAB/created-a-field-to-use-as-a-filter-and-its-nots-working-correctly",
+        "author": "",
+        "date": "April 15, 2025 at 8:02 PM",
+        "content": "Below is the expression I created and it is not working correctly.To be honest, the only part of this expression (based on my data) that isn't working is the first two lines. My assumption is I am not writing the expression correctly.IF [Loan Type] = '02' and ([Interest Only Term] > 0 and [Interest Only Term] < 181) then 'No'ELSEIF [Loan Type] = '06' and ([Interest Only Term] > 0 and [Interest Only Term] < 181) then 'No'ELSEIF [Loan Type] = '01' and [Interest Only Term] = 0 then 'Yes'ELSEIF [Loan Type] = '05' and [Interest Only Term] = 0 then 'Yes'ELSE 'Yes'ENDThank You!",
+        "best_answer": null
+    },
+    {
+        "title": "I have a basic table that plots out manufacturing locations which I am able to visualize on a map and now want to layer on US population data.  Selected map>background layers and 'Population' in the 'Data Layer'. Nothing changes on the map view. Pls help.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E4FLKCA3/i-have-a-basic-table-that-plots-out-manufacturing-locations-which-i-am-able-to-visualize-on-a-map-and-now-want-to-layer-on-us-population-data-selected-mapbackground-layers-and-population-in-the-data-layer-nothing-changes-on-the-map-view-pls-help",
+        "author": "",
+        "date": "Edited April 15, 2025 at 7:40 PM",
+        "content": "",
+        "best_answer": null
+    },
+    {
+        "title": "How can I create similar chart in Tableau ?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000CZRpgCAH/how-can-i-create-similar-chart-in-tableau-",
+        "author": "",
+        "date": "March 28, 2025 at 11:51 AM",
+        "content": "I want to create this similar sheet in tableau, and I have the data in same table format in my Database, how can I create this ? do I need to unpivot my table ?? how can I create these bars inside the cells in tableau ??Anything that helps, please let me know.",
+        "best_answer": null
+    },
+    {
+        "title": "Grey Highlights how to make thinner?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E4QqSCAV/grey-highlights-how-to-make-thinner",
+        "author": "",
+        "date": "April 15, 2025 at 6:41 PM",
+        "content": "Hi Is there a way to make the grey bars flush is there a thickness setting anywhere?",
+        "best_answer": null
+    },
+    {
+        "title": "Please help me with this error. I just updated my Tableau Desktop to the latest version (2025.1.0), and now I get this error when trying to open some workbooks.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DBsyWCAT/please-help-me-with-this-error-i-just-updated-my-tableau-desktop-to-the-latest-version-202510-and-now-i-get-this-error-when-trying-to-open-some-workbooks",
+        "author": "",
+        "date": "Edited April 4, 2025 at 6:23 PM",
+        "content": "Unable to complete actionThe connection to the data source might have been lost.Error Code: 6D75755AQuery category '43' is not supported by the Viz Data APIclass TableauException",
+        "best_answer": null
+    },
+    {
+        "title": "Refresh Extract of multiple connection source containing a static geospatial file in Tableau Online",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DdUogCAF/refresh-extract-of-multiple-connection-source-containing-a-static-geospatial-file-in-tableau-online",
+        "author": "",
+        "date": "April 10, 2025 at 12:03 PM",
+        "content": "Hi everyone,I have created an extract in Tableau Desktop, that takes data from two different sources, from a connection to mysql server and from a \"static\" geospatial file (saved locally). I upload the workbook to tableau online and everything seems to be perfect. However, the problems occurs when it comes to refreshing the extract. The extract is not refreshed, even though there is no error alert returned by tableau online when I try to refresh it manually. The connection to mysql server is functional, because I tested it when I uploaded the workbook. I assume there is a problem with a geospatial file. However, the geospatial file is included as an external file when I upload the workbook and there is no need to be updated. What do you think? Is there a workaround on this?",
+        "best_answer": "Check to see the path Tableau is using during the update - by default your tableau file is saved to the My Repository folder - and there is where Tableau will go when you \"refresh\"  - if you revised file in some other location you will need to change the path - use Edit Connection instead of refresh"
+    },
+    {
+        "title": "Databricks connection Error - SSL_connect: certificate verify failed.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E32LxCAJ/databricks-connection-error-sslconnect-certificate-verify-failed",
+        "author": "",
+        "date": "April 15, 2025 at 4:05 PM",
+        "content": "We are trying to connect databricks source from Tableau desktop. After authentication page , getting below error, The same connection is working fine from Tableau server.An error occurred while communicating with the Databricks data source 'Untitled Data Source'Unable to connect to the server. Check that the server is running and that you have access privileges to the requested database.Error Code: B19090E0There was an unknown connection error to the database. The error message below has additional information, but you might need to ask the database administrator to review the database logs.[Simba][ThriftExtension] (14) Unexpected response from server during a HTTP connection: SSL_connect: certificate verify failed.Unable to connect to the Databricks server \"adb-517146009584825.5.azuredatabricks.net\". Check that the server is running and that you have access privileges to the requested database.",
+        "best_answer": null
+    },
+    {
+        "title": "Why can't I refresh all data sources (extracts) at once?",
+        "link": "https://community.tableau.com/s/question/0D58b0000BKFP1YCQX/why-cant-i-refresh-all-data-sources-extracts-at-once",
+        "author": "",
+        "date": "July 25, 2023 at 3:27 PM",
+        "content": "Hi,I have a project in tableau desktop with 5-6 data sources, all extracts.If I go to the \"data source\" tab, I see the refresh icon at the upper left.  Then there's also the \"refresh\" button on the top right.  I circled these both in the photo below.What is the difference between the refresh icon (left) and the \"refresh\" option on the right?  And more importantly, is there a way to refresh ALL data sources (extracts) at once?  I thought there was an option in the data menu, but all I see is an option to \"refresh data source\" which I believe is no different from doing each one-by-one.Currently I'm having to select each data source manually and refresh.  And sometimes if I click only the refresh icon it doesn't refresh - I have to click the icon AND the \"refresh\" button.Assistance would be greatly appreciated  -- there must be a better way?",
+        "best_answer": null
+    },
+    {
+        "title": "Extract error \"error Code: 6Ea18A9E Internal Error - An Unexpected Error Occurred And The Operation Could Not Be Completed\"in Tableau Desktop v2020.2.1 (20202.20.0525.1210) 64 bit",
+        "link": "https://community.tableau.com/s/question/0D54T00000M1ig2SAB/extract-error-error-code-6ea18a9e-internal-error-an-unexpected-error-occurred-and-the-operation-could-not-be-completed-in-tableau-desktop-v202021-202022005251210-64-bit",
+        "author": "",
+        "date": "Edited October 26, 2020 at 5:39 AM",
+        "content": "Hello Guys,I am using Tableau Desktop v2020.2.1 (20202.20.0525.1210) 64 bit,I am using relationships to join the tables, in this version I am getting below error when changing connection from live to extract\"error Code: 6Ea18A9E Internal Error - An Unexpected Error Occurred And The Operation Could Not Be Completed.\".As I search it on Google, I got below link for the resolution:\"https://kb.tableau.com/articles/issue/error-Code-6Ea18A9E-Internal-Error-An-Unexpected-Error-Occurred-And-The-Operation-Could-Not-Be-Completed-When-Publishing-Or-Creating-And-Extract-In-2020-2?lang=zh-tw\"here resolution is to update the tableau desktop to v2020.2.4.Is it really necessary to update the tableau desktop version to v2020.2.4. or is there any workaround available.If I update tableau desktop version to v2020.2.4, Could I use the Tableau Server v2020.2  or do I need update the tableau server to v2020.2.4,?Please share your expertise, Thanks in advance.Thanks,Akash Jain",
+        "best_answer": null
+    },
+    {
+        "title": "Generate a calculated field that will use the parameter against specific conditions.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E13FRCAZ/generate-a-calculated-field-that-will-use-the-parameter-against-specific-conditions",
+        "author": "",
+        "date": "April 15, 2025 at 11:49 AM",
+        "content": "Hello folks,I have a pipeline table which is the Sum of POS summarized by Month, Sales Stage Group.The objective is to have a self made calculator that calculates 3 metrics (formulas are included in the image below):Projected WinTotal Closed WonTMP * RateCan you help me provide a way to have a a table that does the same logic as below?The expected output would be, there should be an input cell (parameter which value is from 0.00 - 0.99) that can be used to interact with values.I have attached a sample workbook Thanks!",
+        "best_answer": "Hi,@Lae Days(Member)​Are you looking for something like the attached? Please check.*The appearance was put aside and the calculation results took priority.<sample><calc>​<Note>When calculating between fields, if any of the fields contain NULL, the result will also be NULL. For this reason, it is recommended to process the fields with the ZN function before calculating between them.ex.zn(sum(if [Sales Stage (group)]='Closed Won' then [POS] end ))+zn([Projected Win]​)​*If you get the best results from this exchange, I would appreciate it if you could choose the best answer or upvote."
+    },
+    {
+        "title": "Analyzing Stock Movement",
+        "link": "https://community.tableau.com/s/question/0D58b0000Bq9nDSCQY/analyzing-stock-movement",
+        "author": "",
+        "date": "Edited November 21, 2023 at 6:53 AM",
+        "content": "I'm unsure of the most effective way to analyze stock turns in my data set.A stocked items dataset is collected each day and stored as a list.Date Collected (Day/Date) Added to Columns in worksheetEach stock item has a Unique id. Added to Rows in worksheetItem Count is displayed as \"1\" Added to TEXT in MarksWhere an item is present (\"1\" ) its availably is \"Stocked\"Where a blank displays the item has been \"Removed\"Items can occasionally be \"Removed\" and \"Re-stocked\" several days later.I'm wanting to create a summary of items \"Removed\", items \"Stocked\" and items \"Re-Stocked\" on a daily basis. Further more I'd like to be able to calculate and display the duration, or average duration, each items was \"Stocked\" for or \"Removed \" for.Any assistance would be appreciated.",
+        "best_answer": null
+    },
+    {
+        "title": "How do I create a filter that Shows the Most Recent Date or All dates without having a third option on the filter itself, such as Null",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DzvOfCAJ/how-do-i-create-a-filter-that-shows-the-most-recent-date-or-all-dates-without-having-a-third-option-on-the-filter-itself-such-as-null",
+        "author": "",
+        "date": "Edited April 15, 2025 at 1:29 AM",
+        "content": "Hi Community. I know this is an easy one but I'm stuck on it. I want to show either the Most Recent date (Row2 = 1) or All dates, without the filter itself having a third option such as Null. I just want \"Most Recent\" or \"All\" in a single value list. I'm using the formula below as the filter. Thanks in advance for any help!if [Row2] = 1 then \"Most Recent\" END@Jim Dehner(Member)​ probably answered this one ten years ago but I can't find it 😄",
+        "best_answer": "I'd have a parameter that had the values of \"Most Recent\" or \"All\" and then a calculated field of:[ParameterSelection]=\"All\"OR[ParameterSelection]=\"Most Recent\"and[Row2]=1"
+    },
+    {
+        "title": "Hi. I am new to Tableau I need a calculated field filter that will allow me to find comma separated values listed in a column even when the order I enter them in the parameter search does not exactly match with the order they are entered in the column",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E066SCAR/hi-i-am-new-to-tableau-i-need-a-calculated-field-filter-that-will-allow-me-to-find-comma-separated-values-listed-in-a-column-even-when-the-order-i-enter-them-in-the-parameter-search-does-not-exactly-match-with-the-order-they-are-entered-in-the-column",
+        "author": "",
+        "date": "April 15, 2025 at 4:46 AM",
+        "content": "I am sorry I cannot share workbook.  But I have described below how the data is presented and also attached word document.I set up a calculated field filter that allows users to enter 3 names in the parameter search box to find all the projects that are managed together by that set of project managers.The project manager names are entered with a comma delimiter separating each name (table above). I need a calculated field that will return results regardless of the order that I enter the 3 names in the parameter search box. Currently, my calculated field filter only returns a result if type the 3 names are typed in the parameter search box in the same order as they are entered in the column.Project ManagersJosh, Bassine, LorraineCaroline, Ndeye, MarkMichelle, Francine, KayIf I type in parameter search boxJosh, Bassine, Lorrainethen It will return a resultProject ManagersJosh, Bassine, LorraineHowever, if I switch the order of the names when I type them in the parameter search box. For example:Bassine, Josh, LorraineorLorraine, Bassine, Josh. Then, it will not return a result. I need a calculated field that returns the same result as above even if I switch the order in which I enter the names in the parameter search box. Is this possible?Project ManagersJosh, Bassine, LorraineHere is the calculated field that I am currently usingIFCONTAINS([Judges Presiding Over Case],SPLIT([AND Judge On Case Parameter],',',1))AND CONTAINS([Judges Presiding Over Case], SPLIT([AND Judge On Case Parameter],',',2))AND CONTAINS([Judges Presiding Over Case], SPLIT([AND Judge On Case Parameter],',',3))THENTRUEELSEFALSEEND",
+        "best_answer": null
+    },
+    {
+        "title": "Tableau Interaction Using Python",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DkspXCAR/tableau-interaction-using-python",
+        "author": "",
+        "date": "April 11, 2025 at 11:28 AM",
+        "content": "Hi tableau fam,I have a Tableau workbook file containing 8 worksheets and 1 dashboard. Using Python's TableauDocumentapi module, I successfully retrieved the fields and data sources for each worksheet. Now, I want to retrieve the worksheets used in the dashboard and output them as a list.Will I be able to achieve that?I did a ton of research, and I got nothing. Can anyone help me with this?It would mean a lot!Thanks,Rahul Joseph Augustin",
+        "best_answer": null
+    },
+    {
+        "title": "I have published 10 sheets directly to server and i need to redirect to these all 10 sheets via a prompt page where i may need to filter any of these sheets out of 10 via filter method.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000E0IzpCAF/i-have-published-10-sheets-directly-to-server-and-i-need-to-redirect-to-these-all-10-sheets-via-a-prompt-page-where-i-may-need-to-filter-any-of-these-sheets-out-of-10-via-filter-method",
+        "author": "",
+        "date": "April 15, 2025 at 6:54 AM",
+        "content": "I have published 10 sheets directly to server and i need to redirect to these all 10 sheets via a prompt page where i may need to filter any of these sheets out of 10 via filter method.Here i need to have these filters as multi select and once i select the preferred sheets i only need to see those sheets.Challenges:unable to bring multiselect filters or parameters to select these sheets, only single select is possible right nowafter selecting though single sheet and clicking submit button and the new tab opens where i still see all 10 sheets visible and not just the sheets selected.(my intention here is to see only selected sheets in prompt page to get populated after submit button)Insights:read like this feature like show/Hide options for sheets in server is not possible in Native tableau and may be possible with the help of javascript API with UI/UX technics.Please provide some insights on this",
+        "best_answer": "I feel like that's more work for the user to select the dashboards they plan to look at and then navigating to the one they want to look at, rather than just clicking on the one(s) they want to look at in the first place. But yes, I agree with your research, there is no native functionality that will hide dashboard tabs based on any user selection."
+    },
+    {
+        "title": "URL action on a single field.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DuOwUCAV/url-action-on-a-single-field",
+        "author": "",
+        "date": "April 14, 2025 at 9:37 AM",
+        "content": "In the above image, I want that when an end user clicks on any Tableau link it should redirect to that orl page, rest fields should remain same like not working as actionI have tried with creating a dashboard action go to url and select thet current sheet and target field is Tableau link, it is working but on clicking on other fields also it is giving same url pageI only want to that url action should work only for the Tableau link field.Can you pls suggest something to achieve this?",
+        "best_answer": null
+    },
+    {
+        "title": "Net new current month values",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DzpBNCAZ/net-new-current-month-values",
+        "author": "",
+        "date": "April 15, 2025 at 8:32 AM",
+        "content": "Hi Everyone,i am trying to get net values for the current month in tableau desktop.Example:Date ID3/14/2025 1233/14/2025 2343/14/2025 4564/14/2025 6784/14/2025 1234/14/2025 229output: with new net values this monthDate ID4/14/2025 6784/14/2025 229",
+        "best_answer": null
+    },
+    {
+        "title": "Create a parameter list, select from the parameter list, then filter by another dimension. Confused.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DuxabCAB/create-a-parameter-list-select-from-the-parameter-list-then-filter-by-another-dimension-confused",
+        "author": "",
+        "date": "April 14, 2025 at 10:32 AM",
+        "content": "I'm looking to create a parameter list with Names where Type = 'x'.Then the user can select a Name from that parameter list, and it will filter the table by Survey ID.Below is the table I'm working with.I'm struggling to build a calculated field that will filter just by Survey ID after selecting the Name.My process is as follows.1. Initially, I build a calculated field so the parameter can load the list when the workbook opens:If[Type]='x'THEN[Name]END2. Then I build a calculated field to filter by Survey IDIF[parameter]=NameTHENSurveyIDENDUnfortunately, doing this filters for both Type='x' and the Name selected in the parameter. I end up with this:Whereas what I'm trying to achieve is more like this:Can anyone help me understand what I may be doing wrong?",
+        "best_answer": "Like this?You can't apply two separate filters, because filters are always AND, filtering for a type of XANDa Name of E. You need to combine the filter to check for the combination of x AND E, and if it occurs, then the Survey ID is included - the MAX of the condition says ifanyrow satisfies the condition, then the Survey ID satisfies the condition."
+    },
+    {
+        "title": "I'm trying to reorder the legends of the items in the sheet & dashboard and I'm getting this error message: \"Unable to complete actionError in parameters for command 'reorder-legend-items'wrong type: 0 \"",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DmZzRCAV/im-trying-to-reorder-the-legends-of-the-items-in-the-sheet-dashboard-and-im-getting-this-error-message-unable-to-complete-actionerror-in-parameters-for-command-reorderlegenditemswrong-type-0-",
+        "author": "",
+        "date": "Edited April 11, 2025 at 5:06 PM",
+        "content": "It's happening on all workbooks on my computer (Macbook) and when colleagues open that same workbook on their computers, it works. So my laptop seems to be the problem. I've tried restarting tableau, as well as the computer. Still doesn't work. Has anyone had a similar issue? How did you solve it?I have the latest version downloaded, Apple silicon, 2025.1Many thanks",
+        "best_answer": null
+    },
+    {
+        "title": "How to make multiple Year filter (NOT using a PARAMETER) to default to current year?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Dn7ngCAB/how-to-make-multiple-year-filter-not-using-a-parameter-to-default-to-current-year",
+        "author": "",
+        "date": "April 11, 2025 at 7:17 PM",
+        "content": "How to make multiple Years filter (NOT using a PARAMETER) to default to current year?I have a Hero Metric that must focus on a single [Year] value and have a table below that sum the total years. WITHOUT using a parameter how to create a dynamic [Year] filter to do below options. It's like using 1 year filter to do two different things,Goal:1. If a person chooses multiple years then only retrieve the SUM from the current year \"2025\"2.If the person pick ONE specific year (example 2023) then it should return the value for \"2023\"3.If there is no selection or set to ALL  the default the return the value based on current year [year(today())]",
+        "best_answer": "See if this helps:I have converted the type of the \"Date Year\" field to Date.Applying the Year on the date field now to the filter and checking the option to filter the latest date when the workbook is opened. Added this filter to context and applied across both the sheets.Created a LOD calculation to always get you the count for the latest year within the filtered years.Note: You have future dates in the current data. You may want to apply a data source filter to exclude those periods."
+    },
+    {
+        "title": "Stickiness ratio exceeding 100%",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DwwKACAZ/stickiness-ratio-exceeding-100",
+        "author": "",
+        "date": "April 14, 2025 at 6:16 PM",
+        "content": "Hi Team,I'm doing following steps to calculate stickiness ratio, but getting values erroneously.Could you please help me with this.Here are the steps I did:MAU : { FIXED [MonthlyDate]:COUNTD([Customer ID])}WAU(weekly active users) : { FIXED ISOWEEK([Order Date]):COUNTD([Customer ID])}Stickiness Ratio : SUM([WAU])/SUM([MAU])Non Stickiness Ratio : 1 - Stickiness ratio.Basically, I want stickiness ratio for a given date range as Weekly Active Users / Monthly Active Users of that month . Average it over the month.Here is the notebook :Stickness Ratio % | Tableau PublicAppreciate the help.",
+        "best_answer": "A week can be part of two months which will mess up your calculations.  Ensure that a day/week is counted only once across months."
+    },
+    {
+        "title": "How to stop mark labels from disappearing after each point in an animated line graph?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000CoYZWCA3/how-to-stop-mark-labels-from-disappearing-after-each-point-in-an-animated-line-graph",
+        "author": "",
+        "date": "April 1, 2025 at 3:52 AM",
+        "content": "Hi,I'm trying to figure out how to keep the history of my mark labels when I animate a line graph. The best I can do when clicking \"show history\" is by having the label appear once when it \"iterates\" and then it disappears once it gets to the next point. I want the mark labels to stay throughout the animation, so you can see the value of each point over time. I don't want the viewer to have to rely on a y-axis, so I usually keep mark labels for every point on a line graph and delete the y-axis bar when I make line graphs, but I can't do it for animated line graphs.I've only found one post related to this question from a few years ago, but the answer was really vague, talking about having to convert the data into a PivotChart, which seemed like a lot of work for something so seemingly simple. Help is greatly appreciated. Thank you!",
+        "best_answer": "Hi,@Aria Teufel(Member)​Sorry for the late reply. What do you think of the attached suggestion?<sample>​*If you get the best results from this exchange, I would appreciate it if you could choose the best answer or upvote."
+    },
+    {
+        "title": "How to add overall all facility average line to the graph with 2 line parameters when a facility is selected from the filter.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DoirTCAR/how-to-add-overall-all-facility-average-line-to-the-graph-with-2-line-parameters-when-a-facility-is-selected-from-the-filter",
+        "author": "",
+        "date": "April 11, 2025 at 10:13 PM",
+        "content": "Help me add overall average antibiotic starts rate (all facilities average) by month to the graph above in a dotted line format in addition to the 2 parameters shown. When facility name is selected from the filter it should show facilities average antibiotic therapy starts rate by month, average antibiotic therapy starts by month, and a dotted overall all facilities average antibiotic therapy starts by month.",
+        "best_answer": "Hi,@Mounica Soma(Member)​It's difficult to create a chart as you requested. I'm sorry.I've made a workaround, so please check it out.<sample>I tried drawing it with a different line instead of a dotted line.<Data><Calc><Setting>*If you get the best results from this exchange, I would appreciate it if you could choose the best answer or upvote."
+    },
+    {
+        "title": "Create set option not available on Tableau Desktop 2024.2",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DyxVsCAJ/create-set-option-not-available-on-tableau-desktop-20242",
+        "author": "",
+        "date": "April 14, 2025 at 10:10 PM",
+        "content": "I could not find the create set option on Tableau 20204.2. It was there last year.",
+        "best_answer": null
+    },
+    {
+        "title": "403 Communication with Server Error while opening published file in Tableau Desktop",
+        "link": "https://community.tableau.com/s/question/0D58b0000Bv26VZCQY/403-communication-with-server-error-while-opening-published-file-in-tableau-desktop",
+        "author": "",
+        "date": "Edited December 8, 2023 at 6:26 PM",
+        "content": "Hello all,This morning, I published a Tableau Desktop file to Tableau Public. It worked great; the file is on Tableau Public and works fine, and I even able to make some edits in Desktop and re-publish a couple times before I saved everything and closed the document.I now need to open my Tableau Public-published file in Tableau Desktop, but when I try, I get the following error: \"Unable to complete actionA communication error (403) has occurred.\" It's still working fine in Tableau Public.What's happening here? I've never had this problem before, and I have published Desktop files with Public many times in the past. Why is it misbehaving in this particular instance? I'd love to not have to re-do the entire thing!Thank you,Catherine",
+        "best_answer": null
+    },
+    {
+        "title": "I have both PNG and JPG Images.  The PNG images do not load while on the desktop version of Tableau but the JPG does even though the link formats are almost the exact same.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DxsEbCAJ/i-have-both-png-and-jpg-images-the-png-images-do-not-load-while-on-the-desktop-version-of-tableau-but-the-jpg-does-even-though-the-link-formats-are-almost-the-exact-same",
+        "author": "",
+        "date": "April 14, 2025 at 7:00 PM",
+        "content": "I have both PNG and JPG Images. In Tableau Desktop (All versions) the PNG images to not show, they just show as unloaded images while the JPG versions all come through correctly. However when I publish the dashboard to server and view on the web, all the images now appear. The issue is that I need them to appear on the desktop. I have read many forums but nothing has worked. I will attach screenshots below. Also, if I drop a image box into a dashboard and insert the PNG link there, the images will load in correctly. The images attached show the desktop version (Not loading PNG) vs the server (where they do load).Thanks in advance.",
+        "best_answer": null
+    },
+    {
+        "title": "How can you dynamically synchronize the y-axes for multiple line charts from different worksheets that use the same data source and another line chart from a different worksheet that uses a different data source?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DMJPiCAP/how-can-you-dynamically-synchronize-the-yaxes-for-multiple-line-charts-from-different-worksheets-that-use-the-same-data-source-and-another-line-chart-from-a-different-worksheet-that-uses-a-different-data-source",
+        "author": "",
+        "date": "April 7, 2025 at 6:44 PM",
+        "content": "I cannot figure out how to dynamically synchronize the y-axes for multiple line charts from different worksheets that use different data sources. I have tried numerous solutions posted online (e.g.,Is there a way to dynamically sync the y-axis of multiple worksheets used in a dashboard?;Synchronize axis for multiple worksheets dynamically), but have not had any luck.Specifically, what I am trying to do is dynamically synchronize the y-axes for two line charts from different worksheets that use the same data source and one more line chart from a different worksheet that uses a different data source, with these three charts on one dashboard. I would like the highest y-axis value of the three charts to be the max y-axis value for all three charts, and I would like the lowest y-axis value of the three charts to be the minimum y-axis value for all three charts. The charts will be dynamic because different filter options will be provided, so the lines and y-axes will change according to what filters are applied by the user.Attached is a workbook with examples I am trying to work with. The workbook contains fictitious data that I made up regarding number of cars sold nationwide and by state, city, and car make. In the dashboard, I would like all three charts' y-axes to be the same and dynamically synchronize depending on the filter options selected.I hope this makes sense, I would also be happy to clarify anything. A solution to this would be incredibly helpful and much appreciated :) Thank you in advance.",
+        "best_answer": null
+    },
+    {
+        "title": "Grouping by condition + Actions",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DwP9qCAF/grouping-by-condition-actions",
+        "author": "",
+        "date": "Edited April 14, 2025 at 6:36 PM",
+        "content": "Hi,Could you please provide a work around to display the output shown below?Output:Display below output Donut and table2. Action Filter: When you click on Condition 1 (which is a measure), Output 1 sheet will be displayed. Similarly, when you click on Condition 2 (a measure based on another condition), Output 2 sheet data should be shown, and so forth.Thanks in advance!!",
+        "best_answer": null
+    },
+    {
+        "title": "How to display additional records for duplicate results?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DvUR3CAN/how-to-display-additional-records-for-duplicate-results",
+        "author": "",
+        "date": "April 14, 2025 at 2:13 PM",
+        "content": "For % Error (which is a continuous value) in this example, I have some records that have the exact same % Recovery and therefore the % Error will also be the same. I should see separate records for these and instead I'm seeing them double up on the % Error column. How do I fix this so it's a separate record. Does that make sense?",
+        "best_answer": "Like this?Move Calculation further to the left if you want a date on each row"
+    },
+    {
+        "title": "How to grant a user only specific rows of data?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DwhQ7CAJ/how-to-grant-a-user-only-specific-rows-of-data",
+        "author": "",
+        "date": "Edited April 14, 2025 at 4:09 PM",
+        "content": "I have a calculation like this to segment who can see what amount of data based on fields. When I proxy in as Joe Smith, I only want to see rows of data where [CEO -2] name = Ryan Thomas. But based on this calc, I do so and still see all of the data. Why is this happening?ifFULLNAME()in(\"Tom Smith,\"BobArnold\")then TRUE// full access ^elseif FULLNAME() = 'Joe Smith' THEN [CEO -2] = \"RyanThomas\"// if I proxy in as Joe Smith, I only want to see rows of data where [CEO -2] name = Ryan Thomaselseif FULLNAME() = [CEO -1 ] then TRUEelseif FULLNAME() = [CEO -2 ] then TRUEelseif FULLNAME() = [CEO -3 ] then TRUEelse FALSE end",
+        "best_answer": null
+    },
+    {
+        "title": "Cell Highlighting Issue in Tabular Chart Based on Filter Selection",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Duob9CAB/cell-highlighting-issue-in-tabular-chart-based-on-filter-selection",
+        "author": "",
+        "date": "April 14, 2025 at 1:03 PM",
+        "content": "Hi everyone,@Tableau Community(Member)​@Tableau Community Manager(Member)​I’ve created a tabular chart in Tableau with Program as a filter. I’m facing an issue with cell highlighting:•\tWhen all programs are selected, or if ABC is included in the selection, the cells are not highlighted for all categories.•\tHowever, when I exclude ABC and select only the other programs, the cells highlight correctly.•\tIf I select only ABC, then none of the cells are highlighted.Has anyone encountered this kind of behavior before? Any suggestions on what might be causing it or how to fix it would be really helpful.Thanks in advance!",
+        "best_answer": null
+    },
+    {
+        "title": "Why does my invisible navigation button work in Tableau Desktop but not when published?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000BFWVGCA5/why-does-my-invisible-navigation-button-work-in-tableau-desktop-but-not-when-published",
+        "author": "",
+        "date": "March 13, 2025 at 2:10 PM",
+        "content": "Been using Tableau Desktop for less than a year, but have been pushed to go beyond what I'd consider to be \"the basics\" based on requests I'm getting on the job. So, here's another question, \"Newbie-level\" or not:I've created invisible navigation buttons for my dashboards using text buttons.  Works great in Tableau Desktop, but when I publish the dashboards, there's a \"ghost\" image in white that appears in all the navigation buttons.I used the following steps to create the navigation buttons:1 - Pointed the button to a dashboard2 - Create a BLANK title  by adding a space3 - Set the font color to WHITE4 - Set the background to NONEAny idea why the buttons won't remain transparent when publishing thedashboard?  Thanks in advance for any help or suggestions to fix this.",
+        "best_answer": "In the dialog where you have created a Navigation button, there is an option \"Image\" instead of \"Text\". You can make your own transparent pixel, or download one from Wikipedia:https://en.m.wikipedia.org/wiki/File:1x1.pngThe image will fill the button box, but maintain its aspect ratio, so if you have a long rectangle to click on, a square image will not fill it, so you would have to create a transparent rectangle of the correct aspect ratio."
+    },
+    {
+        "title": "Color code Legend - Multiple color legends working on multiple measures",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Dbq7TCAR/color-code-legend-multiple-color-legends-working-on-multiple-measures",
+        "author": "",
+        "date": "April 10, 2025 at 4:54 AM",
+        "content": "Hello,I have a scenario where I have three measures LPA, DPA and RPA broken down by Username. I want to color each measure based on a condition as(red yellow green). But if I apply color in more than one measure, the other measure automatically changes it. Is there anyway to do this in a single sheet.  Please refer the workbook for reference.(Also check calculated fields to understand the color coding.  Any suggestions would be helpful.",
+        "best_answer": null
+    },
+    {
+        "title": "Tableau Desktop - Published data source access error after upgrade from 2023.3.6 to 2024.2.4",
+        "link": "https://community.tableau.com/s/question/0D5cw000007B3iDCAS/tableau-desktop-published-data-source-access-error-after-upgrade-from-202336-to-202424",
+        "author": "",
+        "date": "December 17, 2024 at 6:30 PM",
+        "content": "After upgrade Tableau server and Tableau desktop from 2023.3.6 to 2024.2.4, We are unable to connect /access published data source from Tableau desktop. Getting error irrespective of any data source..Unable to complete actionInternal Error - An unexpected error occurred and the operation could not be completed.Error Code: B4640DF6There was an error with the data source \"aircraft_master (RefData.aircraft_master) (EDPPPEPRODUCTION)\". Verify that the data source is configured correctly.",
+        "best_answer": null
+    },
+    {
+        "title": "Everything lost?",
+        "link": "https://community.tableau.com/s/question/0D58b0000CQKQAtCQP/everything-lost",
+        "author": "",
+        "date": "July 6, 2024 at 3:03 AM",
+        "content": "Yesterday I worked on my first project in Tableu public, desktop app.I wasn't sure about the saving functions inside Tableu, so I clicked file -> export packaged workbook.This morning I wanted to open the file to continue my work and I got following error code: Unable to complete actionWorkbooks saved to Tableau Public must use active Tableau extracts. Right-click the data source and select Use Extract before publishing.The data source, HumanResources, is not an active extract.Error Code: 8452077EIs there any way that I can continue my work or do I need to start over again?",
+        "best_answer": "@Daniel Anderson(Member)​ Do you have both Desktop Public and Desktop Professional installed, because it sounds like you were working in Desktop Professional yesterday, but are trying to open the file with Desktop Public today.Starting with 2024.1, Desktop Public can open standard workbooks (twb) in addition to packaged workbooks (twbx), but the data must still be an extract. With Desktop Professional, it is possible to save a packaged workbook without an extract (in fact, it is the default). With Desktop Public, however, whether saving as a twbx or exporting as a twbx, an extract is automatically created.James EmeryTableau Forums AmbassadorPlease click 'Select as Best' on the one reply that answers your question."
+    },
+    {
+        "title": "How to create combo charts?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000Dtn7hCAB/how-to-create-combo-charts",
+        "author": "",
+        "date": "April 14, 2025 at 4:50 AM",
+        "content": "I have two sheets: one contains a bar chart (with two values), and the other contains a line chart (with one value). I would like to combine these visualizations into a single sheet. Is that possible? Please find a sample attachment below.",
+        "best_answer": null
+    },
+    {
+        "title": "I have a Dashboard with two pages. First page contains the details of transactions based on 3 months. The month column is further divided into 3 sub-columns 'Total Transactions', 'Total Credit Transactions' and Total Debit Transactions'.",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DuH6jCAF/i-have-a-dashboard-with-two-pages-first-page-contains-the-details-of-transactions-based-on-3-months-the-month-column-is-further-divided-into-3-subcolumns-total-transactions-total-credit-transactions-and-total-debit-transactions",
+        "author": "",
+        "date": "April 14, 2025 at 7:19 AM",
+        "content": "The second page shows the account details for these transactions. I want to navigate to the second page when i click on each cells of the first page only showing the details of that number of transactions. I have executed the dashboard filter actions, but the problem is after navigating it only shows the total transactions account details.  I will attach the pages and further break it down.Total Transactions = CNT(Transaction id)Total Credit Transactions= IF [Transaction Type]='Credit' THEN [Transaction id] ENDTotal Debit Transactions= IF [Transaction Type]='Debit' THEN [Transaction id] ENDPlease help on this?",
+        "best_answer": null
+    },
+    {
+        "title": "Different Values for the same Data",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DlJAqCAN/different-values-for-the-same-data",
+        "author": "",
+        "date": "April 11, 2025 at 3:30 PM",
+        "content": "Hello folks,I have the problem that I have 9 values in Tableau Desktop for example. When I publish the dashboard, it becomes 91, I don't know why!Another example. In Tableau Desktop I have a value of 8 and in Tableau Cloud in the dashboard it becomes 85....Maybe someone can help me? Or is the problem fixed with the latest update?",
+        "best_answer": null
+    },
+    {
+        "title": "How can I allow filtering by date using a native Tableau date filter while still retaining the necessary months of historical data to ensure accurate streak calculations (e.g., using PREVIOUS_VALUE) across multiple worksheets?",
+        "link": "https://community.tableau.com/s/question/0D5cw00000DkrhKCAR/how-can-i-allow-filtering-by-date-using-a-native-tableau-date-filter-while-still-retaining-the-necessary-months-of-historical-data-to-ensure-accurate-streak-calculations-eg-using-previousvalue-across-multiple-worksheets",
+        "author": "",
+        "date": "April 11, 2025 at 1:57 PM",
+        "content": "Hi Everyone,I'm working on a Tableau use case involving the detection of 7 consecutive months above or below the mean, or with an increasing or decreasing trend, using table calculations.For example:IF [_Flag_BelowMean] = 1THEN PREVIOUS_VALUE(0) + 1ELSE 0ENDThe logic works when unfiltered — no issue.However, the moment I apply a native date filter (e.g., only showing data for 2023), Tableau removes earlier rows before computing the table calculations. This breaks the streak logic.Example: Over the full range, I can see that Feb 2023 is correctly flagged as the 7th consecutive month below mean. But if I filter the view to only show data from 2023, the logic resets — and Feb 2023 is not flagged at all.Things I’ve tried:- Table calc filter (option 3 in workbook):This hides data without removing it (good!)Table calcs workBut it doesn’t sync across worksheets — and I need to apply this filter to multiple charts in a dashboard- Parameter-based filtering (option 2 in workbook):Data still gets filtered- Duplicating the data source pr building relationships with a duplicate data source— haven’t had success setting this up properly. For the former, i tried to link and use the duplicate date variable as the filter but all the options would disappear. For the latter, it filtered the rows before the table calculations for the consecutive count calculated field.What I need is a way to:Still retain 6+ months of historical data in memory so that table calcs like PREVIOUS_VALUE and WINDOW_SUM work correctlyApply this consistently across multiple worksheets/charts in the same dashboardAllow user to use both year and month filters with month filter only showing relavant values in the hierarchy. If this is too much an ask, then a date range would be ok too.I’ll be attaching a simplified workbook/dashboard to demonstrate the issue shortly.Meanwhile, would really appreciate any guidance or solutions — thank you in advance.",
+        "best_answer": null
+    }
+]
