@@ -20,3 +20,5 @@ selenium
 webdriver-manager
 PyPDF2
 PyMuPDF
+langdetect
+googletrans

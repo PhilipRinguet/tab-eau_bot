@@ -29,6 +29,15 @@ from config import PROCESSED_DATA_DIR, RAW_DATA_DIR
 import PyPDF2
 import fitz  # PyMuPDF
 
+import re
+from langdetect import detect
+from googletrans import Translator
+
+import asyncio
+
+# Initialize the translator
+translator = Translator()
+
 app = typer.Typer()
 
 
@@ -48,11 +57,48 @@ def main(
     # -----------------------------------------
 
 
-# Updated function to scrape Tableau Forum threads with expanded posts and best answers
-def scrape_tableau_forum():
-    # Use Selenium to handle dynamic content
+def extract_pdf_data(pdf_dir):
+    """
+    Extracts raw text data from all PDF files in the specified directory.
+
+    Args:
+        pdf_dir (str): Path to the directory containing PDF files.
+
+    Returns:
+        list: A list of dictionaries containing raw text data and metadata for each PDF.
+    """
+    pdf_dir_path = Path(pdf_dir)
+    raw_data = []
+
+    for pdf_file in pdf_dir_path.glob("*.pdf"):
+        try:
+            logger.debug(f"Extracting data from PDF: {pdf_file.name}")
+            doc = fitz.open(pdf_file)
+
+            for page_number, page in enumerate(doc, start=1):
+                text_blocks = page.get_text("blocks")
+                for block in text_blocks:
+                    block_text = block[4].strip()
+                    raw_data.append({
+                        "page_number": page_number,
+                        "source_file": pdf_file.name,
+                        "text": block_text
+                    })
+        except Exception as e:
+            logger.error(f"Failed to extract data from {pdf_file.name}: {e}")
+
+    return raw_data
+
+
+def extract_web_data():
+    """
+    Extracts raw data from the Tableau forum threads.
+
+    Returns:
+        list: A list of dictionaries containing raw text data and metadata for each thread.
+    """
     url = "https://community.tableau.com/s/topic/0TO4T000000QF9nWAG/tableau-desktop-web-authoring"
-    driver = webdriver.Chrome()  # Ensure you have the ChromeDriver installed
+    driver = webdriver.Chrome()
     driver.get(url)
 
     # Click "View More" button
@@ -82,180 +128,106 @@ def scrape_tableau_forum():
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     driver.quit()
 
-    # Extract thread data
     threads = []
     for article in soup.find_all("article", class_="cuf-feedElement cuf-feedItem"):
         try:
             title = article.find("div", class_="cuf-questionTitle").get_text(strip=True)
-            link = article.find("a", class_="cuf-timestamp")['href']
-            author = article.find("span", class_="cuf-entityLinkId").get_text(strip=True)
-            date = article.find("a", class_="cuf-timestamp").get_text(strip=True)
+            link = article.find("a", class_="cuf-timestamp")["href"]
             content_element = article.find("div", class_="cuf-feedBodyText")
-
-            # Updated function to use the correct "feedBodyInner Desktop" class for content and best answer
-            if content_element:
-                expanded_content_element = content_element.find("div", class_="feedBodyInner Desktop")
-                if expanded_content_element:
-                    content = expanded_content_element.get_text(strip=True)
-                    print(f"DEBUG: Full content after expanding: {content}")  # Debug statement
-                else:
-                    content = content_element.get_text(strip=True)
-            else:
-                content = None
-
-            # Check for best answer and ensure "Expand Post" is clicked
-            best_answer = None
-            best_answer_container = article.find("div", class_="cuf-bestAnswerContainer")
-            # Updated function to ensure the "Expand Post" button for the best answer is clicked before extracting content
-            if best_answer_container:
-                expand_button = best_answer_container.find("a", class_="cuf-more")
-                if expand_button:
-                    try:
-                        # Locate and click the "Expand Post" button for the best answer
-                        expand_button_element = driver.find_element(By.XPATH, f"//a[@title='Show more text' and contains(@class, 'cuf-more')]")
-                        ActionChains(driver).move_to_element(expand_button_element).click(expand_button_element).perform()
-                        time.sleep(1)  # Wait for the content to expand
-                    except Exception as e:
-                        logger.warning(f"Could not click 'Expand Post' for best answer: {e}")
-
-                best_answer_element = best_answer_container.find("div", class_="feedBodyInner Desktop")
-                if best_answer_element:
-                    best_answer = best_answer_element.get_text(strip=True)
-                    print(f"DEBUG: Full best answer after expanding: {best_answer}")  # Debug statement
+            content = content_element.get_text(strip=True) if content_element else None
 
             threads.append({
                 "title": title,
                 "link": f"https://community.tableau.com{link}",
-                "author": author,
-                "date": date,
-                "content": content,
-                "best_answer": best_answer
+                "content": content
             })
         except AttributeError:
-            continue  # Skip if any data is missing
+            continue
 
-    # Update the output directory for Tableau forum threads to the interim folder
-    interim_forum_output = PROCESSED_DATA_DIR.parent / "interim" / "tableau_forum_threads.json"
-
-    # Save the data to a JSON file
-    with open(interim_forum_output, "w", encoding="utf-8") as f:
-        json.dump(threads, f, ensure_ascii=False, indent=4)
-
-    print(f"Scraped {len(threads)} threads and saved to {interim_forum_output}")
+    return threads
 
 
-def extract_and_clean_text_with_sections(pdf_dir, output_dir):
+async def translate_text_async(text, translator):
     """
-    Extracts text from all PDF files in the specified directory, groups text into paragraphs based on spacing, merges small chunks, 
-    cleans the text, and saves it to JSON files with metadata.
+    Asynchronously translate text to English using the provided translator.
 
     Args:
-        pdf_dir (str): Path to the directory containing PDF files.
-        output_dir (str): Path to the directory where cleaned text files with metadata will be saved.
-    """
-    pdf_dir_path = Path(pdf_dir)
-    output_dir_path = Path(output_dir)
-    output_dir_path.mkdir(parents=True, exist_ok=True)
-
-    for pdf_file in pdf_dir_path.glob("*.pdf"):
-        try:
-            logger.debug(f"Processing PDF: {pdf_file.name}")
-            doc = fitz.open(pdf_file)
-            extracted_data = []
-
-            for page_number, page in enumerate(doc, start=1):
-                logger.debug(f"Processing page {page_number}")
-                text_blocks = page.get_text("blocks")
-                paragraph = ""
-                previous_bottom = None
-
-                for block in text_blocks:
-                    block_text = block[4].strip()
-                    block_top = block[1]  # Top coordinate of the block
-                    block_bottom = block[3]  # Bottom coordinate of the block
-
-                    # Check for spacing between blocks to detect paragraph boundaries
-                    if previous_bottom is not None and block_top - previous_bottom > 10:  # Example threshold for spacing
-                        if paragraph.strip():
-                            extracted_data.append({
-                                "page_number": page_number,
-                                "source_file": pdf_file.name,
-                                "text": paragraph.strip()
-                            })
-                            paragraph = ""
-
-                    # Add the current block to the paragraph
-                    paragraph += (" " if paragraph else "") + block_text
-                    previous_bottom = block_bottom
-
-                # Append the last paragraph on the page
-                if paragraph.strip():
-                    extracted_data.append({
-                        "page_number": page_number,
-                        "source_file": pdf_file.name,
-                        "text": paragraph.strip()
-                    })
-
-            # Merge small chunks into larger ones
-            merged_data = []
-            temp_paragraph = ""
-            for entry in extracted_data:
-                if len(temp_paragraph) + len(entry["text"]) > 1000:  # Example threshold for large paragraphs
-                    merged_data.append({
-                        "page_number": entry["page_number"],
-                        "source_file": entry["source_file"],
-                        "text": temp_paragraph.strip()
-                    })
-                    temp_paragraph = ""
-                temp_paragraph += (" " if temp_paragraph else "") + entry["text"]
-
-            if temp_paragraph.strip():
-                merged_data.append({
-                    "page_number": entry["page_number"],
-                    "source_file": entry["source_file"],
-                    "text": temp_paragraph.strip()
-                })
-
-            # Save the merged data with metadata to a JSON file
-            output_file = output_dir_path / f"{pdf_file.stem}_paragraphs.json"
-            with open(output_file, "w", encoding="utf-8") as json_file:
-                json.dump(merged_data, json_file, ensure_ascii=False, indent=4)
-
-            logger.info(f"Processed and saved cleaned text for {pdf_file.name}")
-        except Exception as e:
-            logger.error(f"Failed to process {pdf_file.name}: {e}")
-
-
-def roman_to_int(roman):
-    """
-    Convert a Roman numeral to an integer.
-
-    Args:
-        roman (str): Roman numeral as a string.
+        text (str): The text to translate.
+        translator (Translator): The Google Translator instance.
 
     Returns:
-        int: Integer representation of the Roman numeral.
+        str: Translated text in English.
     """
-    roman = roman.upper()  # Ensure the input is uppercase
-    roman_numerals = {
-        'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000
-    }
-    result = 0
-    prev_value = 0
+    try:
+        translated = await asyncio.to_thread(translator.translate, text, dest="en")
+        return translated.text
+    except Exception as e:
+        logger.warning(f"Translation failed for text: {text[:30]}... Error: {e}")
+        return text
 
-    for char in reversed(roman):
-        value = roman_numerals.get(char, 0)
-        if value < prev_value:
-            result -= value
-        else:
-            result += value
-        prev_value = value
 
-    return result
+async def preprocess_data_async(data):
+    """
+    Asynchronously preprocess raw text data by normalizing text, ensuring it is in English (translating if necessary),
+    and deduplicating entries.
 
-# Example usage
+    Args:
+        data (list): A list of dictionaries containing raw text data and metadata.
+
+    Returns:
+        list: A list of dictionaries containing preprocessed text data and metadata.
+    """
+    preprocessed_data = []
+    seen_texts = set()
+    translator = Translator()
+
+    for entry in data:
+        text = entry["text"].lower()
+        text = re.sub(r"[^a-z0-9\s]", "", text)  # Remove special characters
+        text = re.sub(r"\s+", " ", text).strip()  # Normalize whitespace
+
+        # Check if the text is in English
+        try:
+            detected_language = detect(text)
+            if detected_language != "en":
+                # Translate to English if not already in English
+                text = await translate_text_async(text, translator)
+        except Exception as e:
+            logger.warning(f"Language detection failed for text: {text[:30]}... Error: {e}")
+            continue
+
+        # Deduplicate entries
+        if text in seen_texts:
+            continue
+        seen_texts.add(text)
+
+        preprocessed_data.append({
+            "page_number": entry.get("page_number"),
+            "source_file": entry.get("source_file"),
+            "title": entry.get("title"),
+            "link": entry.get("link"),
+            "text": text
+        })
+
+    return preprocessed_data
+
+
+# Update the main script to use asyncio for preprocessing
 if __name__ == "__main__":
     pdf_dir = RAW_DATA_DIR
-    output_dir = PROCESSED_DATA_DIR / "cleaned_text_with_sections"
-    extract_and_clean_text_with_sections(pdf_dir, output_dir)
-    scrape_tableau_forum()
+    web_data_output = PROCESSED_DATA_DIR.parent / "interim" / "tableau_forum_threads.json"
+    pdf_output_dir = PROCESSED_DATA_DIR / "cleaned_text_with_sections"
+
+    # Extract and preprocess PDF data
+    raw_pdf_data = extract_pdf_data(pdf_dir)
+    preprocessed_pdf_data = asyncio.run(preprocess_data_async(raw_pdf_data))
+    for entry in preprocessed_pdf_data:
+        output_file = pdf_output_dir / f"{entry['source_file'].replace('.pdf', '')}_paragraphs.json"
+        with open(output_file, "w", encoding="utf-8") as json_file:
+            json.dump(preprocessed_pdf_data, json_file, ensure_ascii=False, indent=4)
+
+    # Extract and preprocess web data
+    raw_web_data = extract_web_data()
+    preprocessed_web_data = asyncio.run(preprocess_data_async(raw_web_data))
+    with open(web_data_output, "w", encoding="utf-8") as json_file:
+        json.dump(preprocessed_web_data, json_file, ensure_ascii=False, indent=4)
