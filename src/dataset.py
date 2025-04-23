@@ -147,28 +147,37 @@ def extract_web_data():
     return threads
 
 
-async def translate_text_async(text, translator):
+async def translate_texts_async(texts, translator, batch_size=10):
     """
-    Asynchronously translate text to English using the provided translator.
+    Asynchronously translate a list of texts to English in batches.
 
     Args:
-        text (str): The text to translate.
-        translator (Translator): The Google Translator instance.
+        texts (list): List of texts to translate.
+        translator (Translator): Google Translator instance.
+        batch_size (int): Number of texts to translate in each batch.
 
     Returns:
-        str: Translated text in English.
+        list: List of translated texts.
     """
-    try:
-        translated = await asyncio.to_thread(translator.translate, text, dest="en")
-        return translated.text
-    except Exception as e:
-        logger.warning(f"Translation failed for text: {text[:30]}... Error: {e}")
-        return text
+    translated_texts = []
+
+    for i in range(0, len(texts), batch_size):
+        batch = texts[i:i + batch_size]
+        try:
+            translations = await asyncio.to_thread(
+                lambda: [translator.translate(text, dest="en").text for text in batch]
+            )
+            translated_texts.extend(translations)
+        except Exception as e:
+            logger.warning(f"Batch translation failed: {e}")
+            translated_texts.extend(batch)  # Fallback to original texts
+
+    return translated_texts
 
 
 async def preprocess_data_async(data):
     """
-    Asynchronously preprocess raw text data by normalizing text, ensuring it is in English (translating if necessary),
+    Preprocess raw text data by normalizing text, ensuring it is in English (translating if necessary),
     and deduplicating entries.
 
     Args:
@@ -179,55 +188,73 @@ async def preprocess_data_async(data):
     """
     preprocessed_data = []
     seen_texts = set()
-    translator = Translator()
+    texts_to_translate = []
+    metadata = []
 
+    # Normalize and prepare texts for translation
     for entry in data:
         text = entry["text"].lower()
         text = re.sub(r"[^a-z0-9\s]", "", text)  # Remove special characters
         text = re.sub(r"\s+", " ", text).strip()  # Normalize whitespace
 
+        # Skip empty or non-linguistic texts
+        if not any(char.isalpha() for char in text):
+            logger.warning(f"Skipping non-linguistic or empty text: {text}")
+            continue
+
         # Check if the text is in English
         try:
             detected_language = detect(text)
             if detected_language != "en":
-                # Translate to English if not already in English
-                text = await translate_text_async(text, translator)
+                texts_to_translate.append(text)
+                metadata.append(entry)
+            else:
+                if text not in seen_texts:
+                    seen_texts.add(text)
+                    preprocessed_data.append({**entry, "text": text})
         except Exception as e:
             logger.warning(f"Language detection failed for text: {text[:30]}... Error: {e}")
-            continue
 
-        # Deduplicate entries
-        if text in seen_texts:
-            continue
-        seen_texts.add(text)
-
-        preprocessed_data.append({
-            "page_number": entry.get("page_number"),
-            "source_file": entry.get("source_file"),
-            "title": entry.get("title"),
-            "link": entry.get("link"),
-            "text": text
-        })
-
-    return preprocessed_data
+    return preprocessed_data, texts_to_translate, metadata
 
 
-# Update the main script to use asyncio for preprocessing
-if __name__ == "__main__":
+async def main_async():
     pdf_dir = RAW_DATA_DIR
     web_data_output = PROCESSED_DATA_DIR.parent / "interim" / "tableau_forum_threads.json"
     pdf_output_dir = PROCESSED_DATA_DIR / "cleaned_text_with_sections"
 
-    # Extract and preprocess PDF data
-    raw_pdf_data = extract_pdf_data(pdf_dir)
-    preprocessed_pdf_data = asyncio.run(preprocess_data_async(raw_pdf_data))
-    for entry in preprocessed_pdf_data:
-        output_file = pdf_output_dir / f"{entry['source_file'].replace('.pdf', '')}_paragraphs.json"
-        with open(output_file, "w", encoding="utf-8") as json_file:
-            json.dump(preprocessed_pdf_data, json_file, ensure_ascii=False, indent=4)
+    # Extract PDF and web data concurrently
+    raw_pdf_data, raw_web_data = await asyncio.gather(
+        asyncio.to_thread(extract_pdf_data, pdf_dir),
+        asyncio.to_thread(extract_web_data)
+    )
 
-    # Extract and preprocess web data
-    raw_web_data = extract_web_data()
-    preprocessed_web_data = asyncio.run(preprocess_data_async(raw_web_data))
-    with open(web_data_output, "w", encoding="utf-8") as json_file:
-        json.dump(preprocessed_web_data, json_file, ensure_ascii=False, indent=4)
+    # Combine all raw data
+    combined_data = raw_pdf_data + raw_web_data
+
+    # Preprocess data
+    preprocessed_data, texts_to_translate, metadata = await preprocess_data_async(combined_data)
+
+    # Translate non-English texts in bulk
+    if texts_to_translate:
+        translator = Translator()
+        translated_texts = await translate_texts_async(texts_to_translate, translator)
+
+        for entry, translated_text in zip(metadata, translated_texts):
+            if translated_text not in seen_texts:
+                seen_texts.add(translated_text)
+                preprocessed_data.append({**entry, "text": translated_text})
+
+    # Save preprocessed data
+    for entry in preprocessed_data:
+        if "source_file" in entry:  # PDF data
+            output_file = pdf_output_dir / f"{entry['source_file'].replace('.pdf', '')}_paragraphs.json"
+            with open(output_file, "w", encoding="utf-8") as json_file:
+                json.dump(preprocessed_data, json_file, ensure_ascii=False, indent=4)
+        else:  # Web data
+            with open(web_data_output, "w", encoding="utf-8") as json_file:
+                json.dump(preprocessed_data, json_file, ensure_ascii=False, indent=4)
+
+
+if __name__ == "__main__":
+    asyncio.run(main_async())
