@@ -1,24 +1,25 @@
-black
-beautifulsoup4
-requests
-flake8
-ipython
-isort
-jupyterlab
-loguru
-matplotlib
-notebook
-numpy
-pandas
-pip
-pytest
-python-dotenv
-scikit-learn
-tqdm
-typer
-selenium
-webdriver-manager
-PyPDF2
-PyMuPDF
-langdetect
-googletrans
+# Core dependencies
+typer>=0.9.0
+loguru>=0.7.0
+tqdm>=4.66.0
+pathlib
+PyMuPDF>=1.23.0
+aiohttp>=3.8.0
+beautifulsoup4>=4.12.0
+langdetect>=1.0.9
+
+# Translation (avoid googletrans)
+deep-translator>=1.11.0
+
+# Text processing and feature engineering
+spacy>=3.6.0
+scikit-learn>=1.3.0
+numpy>=1.24.0
+
+# Text chunking and embedding
+langchain-text-splitters>=0.0.1
+sentence-transformers>=2.2.2
+faiss-cpu>=1.7.4
+
+# Optional: better entity recognition
+# Install separately with: python -m spacy download en_core_web_sm
